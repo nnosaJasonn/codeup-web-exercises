@@ -5,13 +5,13 @@
     <title>Checkout</title>
 </head>
 <body>
-    <div>
+    <div class="credit_info">
     <label for="credit_number">Credit Card Number
-        <input type="text" id="credit_number" name="credit_number" required>
+        <input type="text" minlength="16" id="credit_number" name="credit_number" placeholder="xxxx-xxxx-xxxx-xxxx" required>
     </label>
     <br>
-    <p>expiration date:</p>
-    <label for="month">Month
+
+    <label for="month">Expiration Date
     <select name="month" id="month" name="expiration" required>Month:
         <option value="jan">January</option>
         <option value="feb">February</option>
@@ -26,12 +26,21 @@
         <option value="nov">November</option>
         <option value="dec">December</option>
     </select>
-    </label>
-    <label for="year">Year
-        <input type="text" id="year" name="expiration" required>
 
+        <select name="month" id="year" name="expiration" required>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
     </label>
+
     <br>
+    </div>
+    <div class="billing_info">
+
     </div>
 
 </body>
