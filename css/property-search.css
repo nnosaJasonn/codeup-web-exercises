@@ -7,7 +7,7 @@
 }
 
 button{
-    display:flex;
+
     position: relative;
 
 }
@@ -36,7 +36,14 @@ h1 span{
     display: flex;*/
 }
 
-.property_type {
+.container{
+    display:flex;
+}
+.container > div {
+    flex: 1;
+}
+
+/*.property_type {
     position:relative;
     top: 10px;
 
@@ -44,7 +51,7 @@ h1 span{
 .size{
     position: relative;
     top: -155px;
-    right: -500px;*/
+    right: -500px;
 }
 .price{
     clear: both;
@@ -52,7 +59,7 @@ h1 span{
 
     left: 210px;
     top: -303px;
-}
+}*/
 
 
 
@@ -71,6 +78,6 @@ h1 span{
     font-size: 10px;
     border-radius: 15px;
     position: relative;
-    top: -210px;
-    left: 307px;
+    top: -33px;
+    left: 357px;
 }

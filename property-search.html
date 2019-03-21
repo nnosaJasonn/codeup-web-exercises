@@ -95,79 +95,82 @@
 
         <form method="GET" action="https://request-inspector.glitch.me">
 
+        <div class="container">
 
 
+            <div class="property_type">
 
-        <div class="property_type">
+            <h4>Property type</h4>
+                <label for="buy_sell">Buy or Sell:
+                    <select id="buy_sell" name="buy_sell">
+                        <option value="buy">Buy</option>
+                        <option value="sell">Sell</option>
+                    </select><br>
+                </label>
 
-        <h4>Property type</h4>
-            <label for="buy_sell">Buy or Sell:
-                <select id="buy_sell" name="buy_sell">
-                    <option value="buy">Buy</option>
-                    <option value="sell">Sell</option>
-                </select><br>
+
+            <label for="house">House
+                <input type="checkbox" id="house" name="property_type" value="house">
             </label>
+            <br>
+
+            <label for="apartment">Apartment
+                <input type="checkbox" id="apartment" name="property_type" value="apartment">
+            </label>
+            <br>
+
+            <label for="commercial">Commercial
+                <input type="checkbox" id="commercial" name="property_type" value="Commercial">
+            </label>
+            <br>
+
+            <label for="condo">Condo
+                <input type="checkbox" id="condo" name="property_type" value="condo">
+            </label>
+            <br>
+
+            <label for="zipcode">Zipcode:
+                <input type="text" id="zipcode" placeholder="Enter your zipcode" name="zipcode">
+            </label>
+            <br>
+
+        </div>
 
 
-        <label for="house">House
-            <input type="checkbox" id="house" name="property_type" value="house">
-        </label>
-        <br>
 
-        <label for="apartment">Apartment
-            <input type="checkbox" id="apartment" name="property_type" value="apartment">
-        </label>
-        <br>
+         <div class="price">
+            <h4>Price Range</h4>
+            <label for="min_price">Minimum price: $
+                <input type="number" id="min_price" placeholder="Enter your min price" name="min_price">
+            </label>
+            <br>
 
-        <label for="commercial">Commercial
-            <input type="checkbox" id="commercial" name="property_type" value="Commercial">
-        </label>
-        <br>
+            <label for="max_price">Maximum price: $
+                <input type="number" id="max_price" placeholder="Enter your max price" name="max_price">
+            </label>
+            <br>
+         </div>
 
-        <label for="condo">Condo
-            <input type="checkbox" id="condo" name="property_type" value="condo">
-        </label>
-        <br>
+            <div class="size">
+                <h4>Select Property size</h4>
 
-        <label for="zipcode">Zipcode:
-            <input type="text" id="zipcode" placeholder="Enter your zipcode" name="zipcode">
-        </label>
-        <br>
-
-    </div>
-
-     <div class="size">
-        <h4>Select Property size</h4>
-
-        <label for="sq_foot_min">Minimum property size:
-            <input type="range" id="sq_foot_min" min="400" max="6000" class="slider" name="sq_foot"> <span id="demo"></span>ft <sup>2</sup>
-        </label>
-        <br>
-        <label for="sq_foot_max">Maximum property size:
-            <input type="range" id="sq_foot_max" min="400" max="6000" class="slider" name="sq_foot"> <span id="sq_foot"></span>ft <sup>2</sup>
-        </label>
-        <br>
-        <label for="num_of_bedrooms">Number of Bedrooms:
-            <input type="number" id="num_of_bedrooms" name="bedrooms">
-        </label>
-        <br>
-        <label for="bathrooms">Number of Bathrooms:
-            <input type="number" id="bathrooms" name="bathrooms">
-        </label>
-     </div>
-
-     <div class="price">
-        <h4>Price Range</h4>
-        <label for="min_price">Minimum price: $
-            <input type="number" id="min_price" placeholder="Enter your min price" name="min_price">
-        </label>
-        <br>
-
-        <label for="max_price">Maximum price: $
-            <input type="number" id="max_price" placeholder="Enter your max price" name="max_price">
-        </label>
-        <br>
-     </div>
+                <label for="sq_foot_min">Minimum property size:
+                    <input type="range" id="sq_foot_min" min="400" max="6000" class="slider" name="sq_foot"> <span id="demo"></span>ft <sup>2</sup>
+                </label>
+                <br>
+                <label for="sq_foot_max">Maximum property size:
+                    <input type="range" id="sq_foot_max" min="400" max="6000" class="slider" name="sq_foot"> <span id="sq_foot"></span>ft <sup>2</sup>
+                </label>
+                <br>
+                <label for="num_of_bedrooms">Number of Bedrooms:
+                    <input type="number" id="num_of_bedrooms" name="bedrooms">
+                </label>
+                <br>
+                <label for="bathrooms">Number of Bathrooms:
+                    <input type="number" id="bathrooms" name="bathrooms">
+                </label>
+            </div>
+        </div>
 
 
         <button type="submit" class="button">Search Now!</button>
