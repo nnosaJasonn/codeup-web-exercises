@@ -8,7 +8,8 @@
             background: url(img/SAskyline.jpg);
             background-repeat: no-repeat;
             background-size: 100% 40vh ;
-            opacity:  0.6;
+            /*opacity:  0.6;*/
+
         }
 
         button{
@@ -19,34 +20,39 @@
         img, #smaller{
 
         }
-        .header {
-            background-color: #808080;
 
+        }
+        h1 {
+            font-stretch: extra-expanded;
+        }
+
+        h1 span{
+            color: #f00
         }
 
         .not_trans {
-            opacity: initial;
-            display: flex;
+
+
+            /*opacity: unset;
+            display: flex;*/
         }
 
         .property_type {
-
            position:relative;
-            top: 49px;
+            top: 10px;
+
         }
         .size{
-            flex-grow: 1;
-            overflow: hidden;
-            clear: both;
+
             position: relative;
-            top: -125px;
+            top: -155px;
             right: -500px;*/
         }
         .price{
             flex-grow: 1;
             position: relative;
             left: 210px;
-            top: -265px;
+            top: -303px;
         }
 
 
@@ -66,28 +72,30 @@
             font-size: 10px;
             border-radius: 15px;
             position: relative;
-            top: -164px;
-            left: 580px;
+            top: -190px;
+            left: 307px;
         }
     </style>
 </head>
 <body>
 
 <header class="header">
-    <h2>San Antonio Realtors</h2>
 
 </header>
 
 
 <main class="main">
 
+
     <div class="not_trans">
-    <form method="GET" action="https://request-inspector.glitch.me">
+        <h1><span>S.A.R. </span> San Antonio Realtors</h1>
+
+        <form method="GET" action="https://request-inspector.glitch.me">
 
 
 
 
-     <div class="property_type">
+        <div class="property_type">
 
         <h4>Property type</h4>
 
@@ -124,7 +132,7 @@
          </select><br>
          </label>
     </div>
-    </div>
+
      <div class="size">
         <h4>Select Property size</h4>
 
@@ -162,6 +170,7 @@
         <button type="submit" class="button">Search Now!</button>
 
     </form>
+    </div>
 </main>
 
 
