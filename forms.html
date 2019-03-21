@@ -5,7 +5,11 @@
     <title>Register With Us</title>
 </head>
 <body>
+<header>
+    <h1>Veridian Dynamics Registration</h1>
+</header>
     <form method="Post" action="https://www.elformo.com/forms/2c45a807-0e95-451f-b2ab-a9a7bb4daeb5">
+
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Insert Email">
         <br>
@@ -16,15 +20,15 @@
         <textarea id="Bio" name="bio" placeholder="Tell Us About Yourself" rows="10" cols="50"></textarea>
         <br>
         <p>How did you hear about us? (select all that apply)</p>
-        <label>
-            <input type="checkbox" name="how_hear" value="billboard">Billboard
+        <label for="billboard">
+            <input type="checkbox" id="billboard" name="how_hear" value="billboard">Billboard
         </label>
         <br>
-        <label>
-            <input type="checkbox" name="how_hear" value="radio">Radio Advertisement
+        <label for="radio_ad">
+            <input type="checkbox" id="radio_ad" name="how_hear" value="radio">Radio Advertisement
         </label>
         <br>
-        <label>
+        <label for="other">
             <input type="checkbox" name="how_hear" id="other" value="other">Other <input type="text" name="how_hear" id="otherText" disabled>
         </label>
         <br>
@@ -42,15 +46,15 @@
 
 
     <script>
-        function disableOtherText() {
+
             var otherText = document.getElementById("otherText")
             var other = document.getElementById("other")
             if (other.checked) {
-                document.getElementById("otherText").disabled = true
-            } {
                 document.getElementById("otherText").disabled = false
+            } else {
+                document.getElementById("otherText").disabled = true
             }
-        }
+
     </script>
 </body>
 </html>
