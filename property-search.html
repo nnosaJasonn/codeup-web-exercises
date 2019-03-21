@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Property Search</title>
+    <style>
+        /*form{
+            background-image: url(img/SAskyline.jpg)
+
+        }
+
+        button{
+            display:flex;
+            justify-content:center;
+        }
+        .header {
+            background-image: url("img/home-banner.jpg");
+            height: 140px;
+        }
+
+        .property_type {
+            float: left;
+            overflow: hidden;
+            clear: both;
+        }
+        .size{
+            overflow: hidden;
+
+        }
+
+
+
+        .button {
+            background-color: blue; /* Green */
+
+    </style>
 </head>
 <body>
     <form method="GET" action="https://request-inspector.glitch.me">
-        <h2>Select a property type <small>(check all that apply)</small></h2>
+
+
+
+
+
+
+     <div class="property_type">
+
+        <h4>Property type</h4>
+
+         <h2>Search for a property</h2>
+
+
         <label for="house">House
             <input type="checkbox" id="house" name="property_type" value="house">
         </label>
@@ -26,7 +69,18 @@
             <input type="checkbox" id="condo" name="property_type" value="condo">
         </label>
         <br>
-        <h2>Select Property size</h2>
+
+        <label for="zipcode">Zipcode:
+            <input type="text" id="zipcode" placeholder="Enter your zipcode" name="zipcode">
+        </label>
+        <br>
+         <select id="buy_sell" name="buy_sell">
+             <option value="buy">Buy</option>
+             <option value="sell">Sell</option>
+         </select><br>
+    </div>
+     <div class="size">
+        <h4>Select Property size</h4>
 
         <label for="sq_foot_min">Minimum property size:
             <input type="range" id="sq_foot_min" min="400" max="6000" class="slider" name="sq_foot"> <span id="demo"></span>ft <sup>2</sup>
@@ -43,10 +97,10 @@
         <label for="bathrooms">Number of Bathrooms:
             <input type="number" id="bathrooms" name="bathrooms">
         </label>
+     </div>
 
-
-
-        <h2>Price Range</h2>
+     <div class="price">
+        <h4>Price Range</h4>
         <label for="min_price">Minimum price: $
             <input type="number" id="min_price" placeholder="Enter your min price" name="min_price">
         </label>
@@ -56,32 +110,31 @@
             <input type="number" id="max_price" placeholder="Enter your max price" name="max_price">
         </label>
         <br>
+     </div>
 
-        <label for="zipcode">Zipcode:
-            <input type="text" id="zipcode" placeholder="Enter your zipcode" name="zipcode">
-        </label>
-        <br>
 
         <button type="submit">Search Now!</button>
 
     </form>
 
     <script>
-        var slider = document.getElementById("sq_foot_min");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+        var sliderMin = document.getElementById("sq_foot_min");
+        var outputMin = document.getElementById("demo");
+        outputMin.innerHTML = sliderMin.value;
 
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
 
-        var slider = document.getElementById("sq_foot_max");
-        var output = document.getElementById("sq_foot");
-        output.innerHTML = slider.value;
 
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
+        sliderMin.oninput = function() {
+            outputMin.innerHTML = this.value;
+        };
+
+        var sliderMax = document.getElementById("sq_foot_max");
+        var outputMax = document.getElementById("sq_foot");
+        outputMax.innerHTML = sliderMax.value;
+
+        sliderMax.oninput = function() {
+            outputMax.innerHTML = this.value;
+        };
     </script>
 
 </body>
