@@ -11,15 +11,17 @@ button{
     position: relative;
 
 }
-#fancy_title{
+#fancy_title {
     font-weight: bold;
     font-size: 60px;
+    color: black;
+}
 
-img, #smaller{
+img, #smaller {
 
 }
 
-}
+
 
 
 h1 span{
@@ -27,7 +29,8 @@ h1 span{
 }
 
 .not_trans {
-
+    font-weight:bold;
+    color: white;
 
     /*opacity: unset;
     display: flex;*/
