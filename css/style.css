@@ -75,7 +75,9 @@ a:active {
 }
 
 
-
+a:active img{
+    display: visible;
+}
 a:link img{
     display:none;
 }
@@ -103,7 +105,7 @@ a:visited img{
     top: 580px;
 }
 .button-display-right{
-    position: absolute;
+    position: relative;
     right: 10px;
     top: 580px;
 }

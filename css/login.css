@@ -25,7 +25,7 @@ fieldset {
     /* There must be 1em between the content and the border of this element */
     padding: 1em;
     /* It should have no border */
-    border: none;
+    border: 0px;
     /* Its background should be white */
     background-color: #fff;
 }
@@ -35,7 +35,7 @@ fieldset {
     width: 80%;
 
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
-    margin: 0 auto;
+    margin:  auto;
 
 
 }
@@ -57,11 +57,9 @@ fieldset {
 
 .form-control {
     /* There must be 4px on top of the text and below the text of an input with this class */
-    margin-top: 4px;
-    margin-bottom: 4px;
+   height: 2em;
     /* It should have a separation of .5em from elements on top of it and below it */
-    padding-top:.5em;
-    padding-bottom: .5em;
+
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     width: calc(100% - 4px);
 

@@ -7,40 +7,49 @@ body, html {
 }
 .message-info{
     background-color: #6495ED;
-    color: #4B0082;
+    opacity: .6;
+    color: darkblue;
     border: 1px;
-    border-color: grey;
+    border-color: darkgrey;
+    border-style: solid;
     border-radius: 6px;
     margin: .5em;
-    padding: 12px;
+    padding: 10px;
+    font-weight: ;
 }
 
 .message-success{
     background-color: #66CDAA;
-    color: green;
+    opacity: .6;
+    color: darkgreen;
     border: 1px;
-    border-color: grey;
+    border-color: darkgrey;
     border-radius: 6px;
     margin: .5em;
-    padding: 12px;
+    padding: 10px;
+    border-style: solid;
 }
 
 .message-warning{
     background-color: #FAFAD2;
-    color: #000
+    opacity: .6;
+    color: #000;
     border: 1px;
-    border-color: grey;
+    border-color: darkgrey;
     border-radius: 6px;
     margin: .5em;
-    padding: 12px;
+    padding: 10px;
+    border-style: solid;
 }
 
 .message-error{
     background-color: #FFB6C1;
+    opacity: .6;
     color: #B22222;
     border: 1px;
-    border-color: grey;
+    border-color: darkgrey;
     border-radius: 6px;
     margin: .5em;
-    padding: 12px;
+    padding: 10px;
+    border-style: solid;
 }
