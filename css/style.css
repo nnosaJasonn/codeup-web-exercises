@@ -1,4 +1,109 @@
+body {
+    background-color: dimgrey;
+    background: url("../img/bananas.png");
+    background-size: 1000px 150px;
+    font-family: 'Arvo', serif;
+}
+
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+h1, h2 {
+    text-decoration: underline;
+
+}
+
+ul {
+    list-style: circle;
+
+}
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0px;
+}
+a {
+    color: darkblue;
+}
+
+button {
+    height: 2em;
+    font-size: 2em;
+    color: white;
+    background: transparent;
+    border: none;
+}
+
+
+.regular_table {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+}
+
+.container > div {
+    flex: 1;
+}
+
+.regular_table th{
+    text-align: left;
+    font-size: 2em;
+    padding: 10px;
+
+}
+.regular_table td{
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+
+
+
+a:visited {
+    color: mediumspringgreen;
+}
+
+a:active {
+    font-size: 100px;
+    color: hotpink;
+    position: relative;
+    bottom: 800px;
+
+}
+
+
+
+a:link img{
+    display:none;
+}
+
+
+
+a:hover img{
+    color: crimson;
+    display:none;
+}
+
+a:visited img{
+    color: crimson;
+    display: none;
+
+}
+
 .fancy-header {
-    color: blue;
-    text-decoration:underline;
+    text-align: center;
+}
+
+.button-display-left{
+    position: absolute;
+    left: 10px;
+    top: 580px;
+}
+.button-display-right{
+    position: absolute;
+    right: 10px;
+    top: 580px;
 }
