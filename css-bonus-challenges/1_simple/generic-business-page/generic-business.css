@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+     font-family: Lato, sans-serif;
+    width:100%;
+
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: lighter;
+}
+
+nav{
+    background-color: orangered;
+    display: inline-block;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid black;
+
+}
+
+header {
+    background-color: orangered;
+   height: 17em;
+    /*margin: 0px;
+    padding-right: 0px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+}
+
+aside{
+    background-color: dimgrey;
+    margin: 0px;
+    text-align: center;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: orangered;
+}
+
+li {
+    float: left;
+    list-style: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+li a:focus{
+    background-color: #fff;
+    color: #000
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.textleft {
+    position: relative;
+    height: 20em;
+    display: flex;
+    justify-content: space-around;
+    overflow: auto;
+}
+
+.left{
+    float: left;
+    align-self: center;
+}
+
+.textleft img{
+    align-self: center;
+}
+
+button{
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-size: 10px;
+}
+button:hover{
+    background-color: lightgrey;
+    color: black;
+}
+
+
+.text-right {
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    height: 20em;
+}
+
+.text-right img{
+    width: 25%;
+    height: 50%;
+    align-self: center;
+
+}
+footer {
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer img{
+    height: 1.5em;
+
+}
+
+footer a:hover{
+    opacity: .5;
+}
