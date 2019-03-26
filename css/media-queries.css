@@ -1,0 +1,120 @@
+
+
+@media screen and (max-width:768px) {
+   .hidden-on-desktop a{
+        text-decoration:none;
+       color: black;
+    }
+
+
+
+    body {
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hidden-on-desktop {
+        text-align: center;
+        background-color: cornflowerblue;
+         width: 75%;
+         height: 3em;
+        line-height: 3em;
+        color: #000;
+    }
+
+    .hidden-on-desktop a:visited{
+        black;
+    }
+
+    .header-img {
+
+    }
+
+    img {
+        width: calc(100% - 16px);
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
+        align-self: flex-end;
+
+    }
+
+    nav ul {
+        padding: 0px;
+    }
+
+    li {
+        list-style: none;
+        height: 3em;
+        margin: .5em;
+        margin-left: 0px;
+        background-color: grey;
+        line-height: 48px;
+    }
+}
+
+        @media screen and (min-width:768px) { /* ... */
+
+            h1 {
+                position: absolute;
+                top: 0px
+
+            }
+
+            .hidden-on-desktop {
+                display: none;
+            }
+
+            nav {
+                position: absolute;
+                top: 0em;
+                right: 0;
+
+            }
+            .header-img{
+                margin-top: 10%;
+                /*margin-left: 4%;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            nav ul {
+                list-style: none;
+            }
+
+            nav li {
+                display: inline-block;
+                margin-right: 2em;
+            }
+
+            .main {
+                float: left;
+                width: 50%;
+                margin: 3em;
+
+            }
+
+            .sub-section {
+                margin: 3em;
+            }
+
+            footer {
+                margin-top: 6em;
+                margin-left: 3em;
+                position: relative;
+
+            }
+
+        }
+
+
+
+
+
