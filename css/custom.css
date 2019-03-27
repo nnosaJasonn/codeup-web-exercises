@@ -7,6 +7,10 @@ h1{
     line-height: 6rem;
 }
 
+/*.fixed{
+    position: fixed;
+}*/
+
 .container{
     padding: 0;
 }
