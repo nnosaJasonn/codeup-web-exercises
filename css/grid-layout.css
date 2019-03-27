@@ -4,8 +4,8 @@
 @media screen and (min-width: 600px) {
 .container {
     margin: 0 auto;
-    width: 100%;
-
+    width: 80%;
+    max-width: 1200px;
 }
 .row{
     width: 100%;
@@ -16,18 +16,36 @@
     clear: both;
 }
 
+
     .column {
         float: left;
         padding: 1em;
+        /*
         border: 1px solid black;
+        */
         margin: 1em 0;
 
     }
 
-    .column.one-half {
+    .two-third{
+        width: 66.6%;
+    }
+
+    .column.one-half, .two-fourth, .three-sixth{
         width: 50%;
         /*
         background-color: orangered;
+        */
+    }
+
+    .three-eighth{
+        width: 37.5%;
+    }
+
+    .column.one-third {
+        width: 33.3%;
+        /*
+        background-color: #B22222;
         */
     }
 
@@ -35,13 +53,6 @@
         width: 25%;
         /*
         background-color: #6495ED;
-        */
-    }
-
-    .column.one-third {
-        width: 33.3%;
-        /*
-        background-color: #B22222;
         */
     }
 
@@ -55,6 +66,8 @@
 
 @media screen and (max-width: 600px){
     .column.one-half.one-third.one-fourth.one-eighth{
-        width: 100%
+        width: 100%;
     }
+
+
 }
