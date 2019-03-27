@@ -1,0 +1,22 @@
+h1{
+    background-color: #FFFFFF;
+    opacity: .6;
+    padding: 0;
+    text-align: center;
+    height: 5rem;
+    line-height: 6rem;
+}
+
+.container{
+    padding: 0;
+}
+
+.jumbotron{
+    background-image: url("../img/pizza.png")
+
+}
+
+.header-main{
+    background-color: lightskyblue;
+    color: navy;
+}
