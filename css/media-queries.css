@@ -1,23 +1,30 @@
 
-@media screen and (max-width:768px) {
+*{
+    transition: all 1s ease;
+}
+@media screen and (max-width:600px) {
     nav {
+        /*
         width: 100%;
+        */
         text-align: center;
     }
 
     body {
         box-sizing: border-box;
         text-align: center;
-        display: flex;
+       /* display: flex;
         justify-content: space-between;
         flex-direction: column;
-        align-items: center;
+        align-items: center;*/
     }
 
     .hidden-on-desktop {
         text-align: center;
         background-color: cornflowerblue;
+        /*
         width: calc(100% - 16px);
+        */
         height: 3em;
         line-height: 3em;
         color: #000;
@@ -89,7 +96,7 @@
 
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 600px){
     .hidden-on-desktop {
         display: none;
     }
@@ -116,7 +123,9 @@
     }
     .main{
         float: left;
+        /*
         width: 50%;
+        */
         padding-right: 2em;
         padding-left: 8px;
     }
@@ -128,7 +137,9 @@
         justify-content: space-between;
     }
     img {
+        /*
         width: calc(100% - 16px);
+        */
     }
 
     #social-media-links img{
