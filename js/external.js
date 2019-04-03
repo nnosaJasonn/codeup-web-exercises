@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 console.log('Hello from external JavaScript');
 alert("Welcome to my Website!");
 
@@ -10,23 +11,27 @@ alert('Great, ' + favColor + ' is my favorite color too!');
 
 
 
-var mermaid = 3;
-var bear = 5;
-var hercules = 1;
-var pricePerDay = 3;
-var totalCost = (mermaid + bear + hercules) * pricePerDay;
+var mermaid = prompt('How many days do you want The Little Mermaid?');
+var bear = prompt('How many days do you want to rent Brother Bear');
+var hercules = prompt('How many days do you want to rent Hercules?');
+var pricePerDay = prompt('What is the cost per day?');
+var totalCost = (+mermaid + +bear + +hercules) * +pricePerDay;
 
 alert('The total cost for your rentals will be $' + totalCost + '!');
 
 var googleHours = prompt('How many hours did you work at Google?');
 var amazonHours = prompt('How many hours did you work at Amazon?');
 var facebookHours = prompt('How many hours did you work at Facebook?')
-var google = 400 * googleHours;
-var amazon = 380 * amazonHours;
-var facebook = 350 * facebookHours;
+var google = prompt('What was your rate of pay for Google?');
+var amazon = prompt('What was your rate of pay for Amazon?');
+var facebook = prompt('What was your rate of pay for Facebook?');
+var totalPay = google * googleHours;
+totalPay += amazon * amazonHours;
+totalPay += facebook * facebookHours;
 
 
-alert('For ' + googleHours + ' hours at Google, ' + amazonHours + ' hours at Amazon, and ' + facebookHours + ' at Facebook, your total pay will be: $' + (google + amazon + facebook) + '!');
+alert('For ' + googleHours + ' hours at Google, ' + amazonHours + ' hours at Amazon, and ' + facebookHours + ' at Facebook, your total pay will be: $' + totalPay + '!');
+
 
 
 
@@ -46,6 +51,7 @@ if (canEnroll) {
 
 
 
+
 var twoItemsBought = prompt('How many items have you purchased?');
 if (twoItemsBought >= 2) {
     twoItemsBought = true;
@@ -53,18 +59,10 @@ if (twoItemsBought >= 2) {
     twoItemsBought = false;
 }
 
-var isExpired = false;
-var premium = prompt('Do you have a premium membership?');
-if (premium === 'yes' || "Yes") {
-    premium = true;
-} else {
-    premium = false;
-}
+var isExpired = confirm('Is the offer Expired?');
+var premium = confirm('Do you have a premium membership?');
+
 
 var offerAvailable =  !isExpired && (twoItemsBought || premium);
 
-if (offerAvailable) {
-    alert('Good news, the offer is available!')
-} else {
-    alert('Sorry, this offer is not currently available')
-}
+alert('Offer availability status is ' + offerAvailable);
