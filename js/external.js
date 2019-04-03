@@ -1,5 +1,6 @@
 "use strict";
 
+
 console.log('Hello from external JavaScript');
 alert("Welcome to my Website!");
 
@@ -44,9 +45,21 @@ if (canEnroll) {
 }
 
 
+
 var twoItemsBought = prompt('How many items have you purchased?');
-var isExpired = confirm('Is the offer expired?');
-var premium = confirm('Do you have a premium Membership?');
+if (twoItemsBought >= 2) {
+    twoItemsBought = true;
+} else {
+    twoItemsBought = false;
+}
+
+var isExpired = false;
+var premium = prompt('Do you have a premium membership?');
+if (premium === 'yes' || "Yes") {
+    premium = true;
+} else {
+    premium = false;
+}
 
 var offerAvailable =  !isExpired && (twoItemsBought || premium);
 
