@@ -1,5 +1,23 @@
 "use strict";
 
+var x = 34;
+
+console.log(x);
+
+var change = function () {
+    x -= 3;
+    return x;
+};
+
+change();
+
+console.log(x);
+change();
+console.log(x);
+change();
+console.log(x);
+
+/*
 
 
 console.log('Hello from external JavaScript');
@@ -66,3 +84,4 @@ var premium = confirm('Do you have a premium membership?');
 var offerAvailable =  !isExpired && (twoItemsBought || premium);
 
 alert('Offer availability status is ' + offerAvailable);
+*/
