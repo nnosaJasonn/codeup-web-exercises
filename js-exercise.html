@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*question 3a*/
+    var mermaid = 3;
+    var bear = 5;
+    var hercules = 1;
+    var price = (mermaid + bear + hercules) * 3;
+
+    console.log(price);
+
+    /* question 3b */
+    var google = 400;
+    var amazon = 380;
+    var facebook = 350;
+    var pay = (google * 6) + (amazon * 4) + (facebook * 10);
+    console.log(pay);
+
+    /* question 3c */
+    var isFull = false;
+    var conflict = false;
+    var canEnroll = !(isFull || conflict);
+
+    console.log(canEnroll);
+
+
+    /* question 3d */
+
+    var twoItemsBought = false;
+    var isExpired = false;
+    var premium = true;
+
+    var offerAvailable =  !isExpired && (twoItemsBought || premium);
+    console.log(offerAvailable);
+
+    /* question 4 */
+
+    var username = 'codeup';
+    var password = '  notastrongpassword';
+    var noSpaceUN = username = username.trim();
+    var noSpacePW = password = password.trim();
+
+    var longEnough = password.length >= 5;
+    var noUsername = !(password.includes(username));
+    var notTooLong = password.length <= 20;
+
+
+
+
+    var passwordGud = longEnough && noSpacePW && noSpaceUN && noUsername && notTooLong;
+    console.log(passwordGud)
+</script>
+</body>
+</html>
