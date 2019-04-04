@@ -10,10 +10,10 @@
  */
 
 function sayHello(name) {
-    console.log('Hello ' + name + "!")
+    return 'Hello ' + name + "!"
 }
 
-sayHello('codeup');
+console.log(sayHello('codeup'));
 
 
 
@@ -37,7 +37,7 @@ console.log(helloMessage);
 
 var myName = 'Jason';
 
-sayHello(myName);
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -62,11 +62,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo(number) {
-    if (number === 2) {
+
+  return number == 2
+   /* if (number === 2) {
         return true;
     } else {
         return false;
-    }
+    }*/
 }
 console.log(random);
 console.log(isTwo(random));
@@ -103,8 +105,8 @@ calculateTip(percentTip,bill);
 
 function applyDiscount(price, discount) {
     var discountPrice = price - (price * discount);
-    var discountPercent = discount * 100
-    console.log(discountPrice.toFixed(2))
+    var discountPercent = discount * 100;
+    console.log(discountPrice.toFixed(2));
     if (discount < 1 && discount > 0) {
         alert('The original price was $' + price + ' the discount is ' + discountPercent + '%  which brings your final total to $' + discountPrice.toFixed(2))
     } else {
