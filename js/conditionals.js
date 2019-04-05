@@ -120,6 +120,8 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 console.log(analyzeColor(randomColor));
 
+console.log(analyzeColor('red'));
+
 switch (randomColor) {
     case "red" :
         console.log('Red is the color of my face when I demo');
