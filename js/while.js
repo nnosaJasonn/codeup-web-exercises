@@ -20,7 +20,7 @@ do {
     coneOrder();
     if (conesBought <= allCones) {
         console.log(conesBought + " cones of ice cream sold!");
-    } else if (allCones == 0) {
+    } else if (allCones === 0) {
         console.log('hooray, I sold all of the ice cream cones!')
         break;
     } else if (conesBought > allCones) {
@@ -28,7 +28,7 @@ do {
         coneOrder();
         if (conesBought > allCones) {
             coneOrder();
-        } else if (conesBought == allCones) {
+        } else if (conesBought === allCones) {
             console.log('hooray, I have sold all of the ice cream cones!');
             break;
         }

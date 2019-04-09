@@ -19,28 +19,120 @@
  */
 
 
+
 (function() {
 
-    var i = 2;
-    while(i<=100) {
-        console.log(i);
-        i +=2;
+
+    for (var i = 1; i <=10; i++) {
+        for (var j = 1; j<=10; j++){
+            console.log(j*i);
+        }
     }
 
-})();
 
-(function() {
+    function fizzBuzz(i){
+        if (i % 15 ===0) {console.log('fizzbuzz') }
+        else if (i%5===0) {console.log('buzz')}
+        else if (i%3===0) {console.log('fizz')}
+        else{console.log(i)}}
+    for(var i = 1; i<=100; i++){fizzBuzz(i)}
 
-    var i=1;
-    while(i<=10) {
-        console.log(Math.pow(i, 2))
+
+
+    for (var i=1; i <= 100; i++){if (i % 15 === 0) console.log("FizzBuzz"); else if (i % 3 === 0) console.log("Fizz"); else if (i % 5 === 0) console.log("Buzz"); else console.log(i);}
+
+
+
+
+    for(var i = 1; i <= 100; i++) {
+        if (i % 15 === 0) {
+            console.log('fizzbuzz')
+        } else if (i % 3 === 0) {
+            console.log('fizz')
+        } else if (i % 5 === 0) {
+            console.log('buzz')
+        } else {
+            console.log(i)
+        }
+    }
+
+    var i =1;
+
+    do{
+        if (i % 15 === 0) {
+            console.log('fizzbuzz')
+        } else if (i % 3 === 0) {
+            console.log('fizz')
+        } else if (i % 5 === 0) {
+            console.log('buzz')
+        } else {
+            console.log(i)
+        }
+        i++
+    } while(i<100);
+
+
+    i = 1;
+    while(i<100) {
+        if (i % 15 === 0) {
+            console.log('fizzbuzz')
+        } else if (i % 3 === 0) {
+            console.log('fizz')
+        } else if (i % 5 === 0) {
+            console.log('buzz')
+        } else {
+            console.log(i)
+        }
+        i++
+    }
+
+
+
+
+
+
+    var i = 1;
+
+do {
+    console.log('The number is ' + i + "!");
+    i++;
+} while(i<26);
+
+
+    i = 100;
+    do {
+        console.log('the number is ' + i + '!');
+        i -= 10;
+    } while (i >= -50)
+
+
+    var i = 1;
+    while(i<=100) {
+        if (i % 2 === 0) {
+            console.log(i);
+        }
+        i++
+    }
+
+    function squareOfNumber(a) {
+        return Math.pow(a, 2)
+    }
+    i = 1;
+    while (i < 11) {
+        console.log(squareOfNumber(i));
         i++
     }
 
 })();
 
 
-/*
+
+
+
+
+
+
+
 
 
 (function userNumber() {
@@ -78,7 +170,7 @@
     }
 })();
 
-
+/*
 /!* ########################################################################## *!/
 
 /!**
@@ -97,7 +189,7 @@
  *
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
- *!/
+ *!*/
 
 
 
@@ -175,6 +267,7 @@ function switchColor (){
 
 switchColor(randomColor);
 
+/*
 /!**
  * TODO:X
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -184,23 +277,23 @@ switchColor(randomColor);
 /!**
  * TODO: X
  * Refactor your above function to use a switch-case statement
- *!/
+ *!*/
 
 var colorInput = prompt('enter a color');
 alert(analyzeColor(colorInput.toLowerCase().trim()));
 
-/!**
+/**
  * TODO: X
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  *!/
 
-/!* ########################################################################## *!/
+/!* ########################################################################## */
 
 function calculateTotal(number, total) {
     if (number === 0) {
-        alert('Sorry, no discount today... your total is $' + total)
+        alert('Sorry, no discount today... your total is $' + total);
         return total;
     }  else if (number === 1) {
         alert('Your discount is 10%! ' + 'your total was $' + total + ', the discount brings your new total to $' + (total - (total * .1)));
@@ -221,7 +314,7 @@ function calculateTotal(number, total) {
         alert('You have cheated! ' + number + ' is not one of the possible lucky numbers!')
     }
 }
-/!*var luckyNumber = Math.floor(Math.random() * 6);*!/
+/*var luckyNumber = Math.floor(Math.random() * 6);*/
 
 
 calculateTotal(7, 50);
@@ -229,7 +322,7 @@ calculateTotal(7, 50);
 console.log(calculateTotal(3, 20));
 
 
-/!**
+/**
  * TODO: X
  * Suppose there's a promotion in Walmart, each customer is given a randomly
  * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
@@ -255,10 +348,10 @@ console.log(calculateTotal(3, 20));
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
- *!/
+ */
 // Generate a random number between 0 and 6
 
 var cost = 100;
 var luckyNumber = Math.floor(Math.random() * 6);
 calculateTotal(luckyNumber, cost);
-*/
+
