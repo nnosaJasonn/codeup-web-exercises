@@ -1,10 +1,11 @@
-* {
+/** {
     box-sizing: border-box;
-}
-
+}*/
+@ media all (width)
 body{
      font-family: Lato, sans-serif;
     width:100%;
+    box-sizing: border-box;
 
 }
 
