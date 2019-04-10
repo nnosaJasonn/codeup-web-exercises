@@ -29,6 +29,8 @@
     console.log(names[3]);
 
 
+
+
     /**
      * TODO:X
      * Write some code that uses a for loop to log every item in the names
@@ -61,6 +63,7 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+
     function first(arr) {
         return arr[0];
     }
@@ -73,18 +76,18 @@
         var final = arr[arr.length-1];
         return final;
     }
-
+/*
     function penultimate(arr) {
         var penultimate = arr[arr.length-2];
         return penultimate;
-    }
+    } */
 
     console.log(first(names));
 
     console.log(second(names));
 
     console.log(last(names));
-    console.log(penultimate(names));
+
 
 
 })();
