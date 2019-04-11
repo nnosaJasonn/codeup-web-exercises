@@ -17,7 +17,7 @@
 
     console.log(planetStringBr);
 
-    var planetStringLi = ' <ul> ' + ' <li>' + planetsArray.join('</li> <li>') + '</li> </ul> '
+    var planetStringLi = ' <ul> ' + ' <li>' + planetsArray.join('</li> <li>') + '</li> </ul> ';
 
     console.log(planetStringLi);
 
