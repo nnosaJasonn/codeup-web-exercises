@@ -50,7 +50,7 @@
     });
 
     /**
-     * TODO:
+     * TODO: X
      * Create the following three functions, each will accept an array and
      * return an an element from it
      * - first: returns the first item in the array
@@ -76,18 +76,18 @@
         var final = arr[arr.length-1];
         return final;
     }
-/*
+
     function penultimate(arr) {
         var penultimate = arr[arr.length-2];
         return penultimate;
-    } */
+    }
 
     console.log(first(names));
 
     console.log(second(names));
 
     console.log(last(names));
-
+    console.log(penultimate(names));
 
 
 })();
