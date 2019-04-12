@@ -12,14 +12,16 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    /* person and sayHello()*/
+
     var person = {
         firstName: "Jason",
-        lastName: "Lindsey",
+        lastName: "Lindsey"
     };
 
     console.log(person);
 
-    person.sayHello =  function(){return 'Hello, from ' + person.firstName + ' ' + person.lastName + '!'}
+    person.sayHello =  function(){return 'Hello, from ' + person.firstName + ' ' + person.lastName + '!'};
 
     console.log(person.sayHello());
 
@@ -48,6 +50,9 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+
+
+    /* HEB discount */
      var shoppers = [
          {
              name: 'Cameron',
@@ -63,13 +68,15 @@
          }
      ];
     shoppers.forEach(function(shopper) {
+
+    }
        var discount = shopper.amount * .12;
        if (shopper.amount >= 200) {
-           console.log(shopper.name + ' has spent more than $200 so he will receive a 12% discount! His total is now $' + (shopper.amount - discount).toFixed(2))
+           console.log(shopper.name + ' has spent $' + shopper.amount + ' which is more than $200 so he will receive a 12% discount! His total is now $' + (shopper.amount - discount).toFixed(2))
        } else {
-           console.log(shopper.name + ' owes $' + shopper.amount.toFixed(2))
+           console.log(shopper.name + ' owes $' + shopper.amount.toFixed(2) + ' if ' + shopper.name + ' spends $' + (200 - shopper.amount) + ' more, ' + shopper.name + ' will recieve a 12% discount!')
        }
-    });
+
     /** TODO: X
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -82,7 +89,16 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    /* books object/array*/
     var books = [
+        {
+            title: 'Skeleton and Ghost',
+            author: {
+                firstName: 'Nathaniel',
+                lastName: 'Dowell'
+            }
+        },
         {
             title: 'Tractatus Logico-Philosophicus',
             author: {
@@ -105,13 +121,6 @@
             }
         },
         {
-            title: 'Skeleton and Ghost',
-            author: {
-                firstName: 'Nathaniel',
-                lastName: 'Dowell'
-            }
-        },
-        {
             title: 'Lost in the Cosmos',
             author: {
                 firstName: 'Percy',
@@ -120,14 +129,15 @@
         }
     ];
 
-    console.log(books);
 
 
+/*
     books.forEach(function(book, index) {
-        console.log('Book number ' + (index + 1));
+        console.log('Book # ' + (index + 1) + "'");
         console.log('Title: ' + book.title);
         console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
-    });
+        console.log('---------')
+    });*/
 
 
     /**
@@ -137,7 +147,7 @@
      * - the book number (use the index of the book in the array)
      * - the book title
      * - author's full name (first name + last name)
-     *
+a     *
      * Example Console Output:
      *
      *      Book # 1
@@ -166,6 +176,8 @@
      *   `showBookInfo` function.
      */
 
+    /* books refactored */
+
     function createBook(title, author) {
         var authorNames = author.split(' ');
         var newTitle = {
@@ -179,23 +191,178 @@
 
     createBook('Social Contract', 'John Locke');
 
-    createBook('A Treatise On Human Nature', 'David Hume');
+    createBook('Either/Or', 'Søren Kierkegaard ');
 
     createBook('After Virtue', 'Alasdair MacIntyre');
+
+    /*Bonus 1*/
+
+    books.forEach(function(element){
+        element.keywords= [],
+            element.isAvailable = true,
+            element.dateAvailable = '',
+            element.lend = function(){
+                if (element.isAvailable === true) {
+                    return element.isAvailable = false
+                } else {}
+            }
+    })
+
+    /*Bonus 1*/
 
 
 
 
     function showBookInfo(array) {
         array.forEach(function(element, index) {
-           console.log('Book number ' + (index + 1));
+           console.log('Book # ' + (index + 1) + ':');
             console.log('Title: ' + element.title);
             console.log('Author: ' + element.author.firstName + ' ' + element.author.lastName);
+            console.log('--------------')
         });
     }
 
     showBookInfo(books);
 
+    /* mini exercise number One */
+
+    var beverages = [];
+
+    function addBeverage(brand, type, volume, cost, expiration, open) {
+        var newBeverage = {
+            brandName: brand,
+            type: type,
+            volumeInLiters: volume,
+            priceInCents: cost,
+            expirationDate: expiration,
+            isOpen: open
+
+        }; beverages.push(newBeverage)
+    }
+
+
+    addBeverage('Iced Coffee', 'Coffee', .5, 250, new Date(), true)
+
+    console.log(beverages[0]);
+
+    /* mini exercise two */
+
+    var users = [
+        {
+            name: "Sam",
+            age: 21
+        },
+        {
+            name: "Cathy",
+            age: 34
+        },
+        {
+            name: "Karen",
+            age: 43
+        }
+    ];
+
+    function nameAndAgeChange(arr) {
+        var nameString = '';
+        arr.forEach(function(element) {
+            nameString += element.name + ' ';
+
+        }); console.log(nameString);
+
+        arr.forEach(function(element){
+            var previousAge = element.age;
+           element.name = 'John Doe';
+           element.age += 1;
+            console.log(element.name + "'s age was " + previousAge + ' but now ' + element.name + " is " + element.age);
+        });
+    }
+
+    nameAndAgeChange(users);
+
+    /* mini exercise 3-dogs*/
+
+    var dogs = [];
+
+    function newDog(breed, weight, age, color, sterilized, shot, shotDate) {
+        var newDog = {
+            breed: breed,
+            weightInPounds: weight,
+            age: age,
+            color: color,
+            sterilized: sterilized,
+            shotRecords: [
+                {
+                    typeOfShot: shot,
+                    date: shotDate
+                }
+            ],
+            bark: function(){return 'Woof!';},
+            getOlder: function(){return newDog.age +=1},
+            fix: function(){if (sterilized === false)
+            {return newDog.sterilized = true;}else{return newDog.sterilized = true;}
+            },
+            vaccinate: function(name){
+                var newShot = {
+                    typeOfShot: name,
+                    date: new Date()
+                };
+                if (newDog.shotRecords[0].typeOfShot !== undefined){
+                    newDog.shotRecords.push(newShot)
+                } else{newDog.shotRecords[0] = newShot}
+                return newShot
+            }
+        };
+        dogs.push(newDog)
+    }
+
+    newDog('chihuahua', 50, 50, 'red', false, 'Canine DA2PPC', 'January 1979')
+    dogs[0].vaccinate('rabies');
+    dogs[0].fix();
+    console.log(dogs[0].sterilized);
+
+    newDog('hound', 3, 'grey', false);
+    console.log(dogs[1]);
+    console.log(dogs[1].shotRecords);
+
+    dogs[1].vaccinate('rabies');
+    dogs[1].vaccinate('pcp');
+    console.log(dogs[1].shotRecords);
+
+    /*Bonus 1: line 195 */
+
+
 
 
 })();
+
+
+/*        {
+            breed: 'chihuahua',
+            weightInPounds: 50,
+            age: 5,
+            color: 'blue',
+            sterilized: true,
+            shotRecords: [
+                {
+                    shot: 'Canine DA2PPC',
+                    shotDate: 'January 1979'
+                },
+                {
+                    shot: 'rabies',
+                    shotDate: 'February 1878'
+                }
+            ],
+            bark: function(){console.log('Woof')},
+            getOlder: function(){dogs.age += 1},
+            fix: function() {dogs.sterilized = !dogs.sterilized},
+            vaccinate: function(name){
+                var newShot = {
+                    shot: name,
+                    shotDate: new Date()
+                },
+                dogs[0].shotRecords.push(newShot)
+            }
+        }
+
+
+        */
