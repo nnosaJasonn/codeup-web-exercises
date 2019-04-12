@@ -176,6 +176,8 @@ a     *
      *   `showBookInfo` function.
      */
 
+
+
     /* books refactored */
 
     function createBook(title, author) {
@@ -206,7 +208,7 @@ a     *
                     return element.isAvailable = false
                 } else {}
             }
-    })
+    });
 
     /*Bonus 1*/
 
