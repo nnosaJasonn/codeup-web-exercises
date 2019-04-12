@@ -21,10 +21,11 @@
 
     console.log(person);
 
-    person.sayHello =  function(){return 'Hello, from ' + person.firstName + ' ' + person.lastName + '!'};
+    person.sayHello = function () {
+        return 'Hello, from ' + person.firstName + ' ' + person.lastName + '!'
+    };
 
     console.log(person.sayHello());
-
 
 
     /**
@@ -53,29 +54,32 @@
 
 
     /* HEB discount */
-     var shoppers = [
-         {
-             name: 'Cameron',
-             amount: 180
-         },
-         {
-             name: 'Ryan',
-             amount: 250
-         },
-         {
-             name: 'George',
-             amount: 320
-         }
-     ];
-    shoppers.forEach(function(shopper) {
+    var shoppers = [
+        {
+            name: 'Cameron',
+            amount: 180
+        },
+        {
+            name: 'Ryan',
+            amount: 250
+        },
+        {
+            name: 'George',
+            amount: 320
+        }
+    ];
+    shoppers.forEach(function (shopper) {
+        console.log(shopperInfo(shopper));
+    });
 
+    function shopperInfo(shopper) {
+        var discount = shopper.amount * .12;
+    if (shopper.amount >= 200) {
+        return shopper.name + ' has spent $' + shopper.amount + ' which is more than $200 so he will receive a 12% discount! His total is now $' + (shopper.amount - discount).toFixed(2)
+    } else {
+        return shopper.name + ' owes $' + shopper.amount.toFixed(2) + ' if ' + shopper.name + ' spends $' + (200 - shopper.amount) + ' more, ' + shopper.name + ' will recieve a 12% discount!'
     }
-       var discount = shopper.amount * .12;
-       if (shopper.amount >= 200) {
-           console.log(shopper.name + ' has spent $' + shopper.amount + ' which is more than $200 so he will receive a 12% discount! His total is now $' + (shopper.amount - discount).toFixed(2))
-       } else {
-           console.log(shopper.name + ' owes $' + shopper.amount.toFixed(2) + ' if ' + shopper.name + ' spends $' + (200 - shopper.amount) + ' more, ' + shopper.name + ' will recieve a 12% discount!')
-       }
+}
 
     /** TODO: X
      * Create an array of objects that represent books and store it in a
@@ -205,8 +209,13 @@ a     *
             element.dateAvailable = '',
             element.lend = function(){
                 if (element.isAvailable === true) {
-                    return element.isAvailable = false
-                } else {}
+                    element.dateAvailable = new Date(Date.now() + 12096e5);
+                    element.isAvailable = false;
+                }
+            },
+            element.receive = function(){
+                element.available = true;
+                element.dateAvailable = new Date()
             }
     });
 
