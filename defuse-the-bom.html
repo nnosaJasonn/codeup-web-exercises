@@ -9,9 +9,12 @@
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
 
+<h3 id="stopWatch"></h3>
+
 <script>
-(function() {
+/*(function() {*/
     "use strict";
+/*
 
     var detonationTimer = 5;
 
@@ -43,11 +46,78 @@
     // We will learn about events in the DOM lessons
     var defuser = document.getElementById('defuser');
     defuser.addEventListener('click', defuseTheBOM);
+*/
+
+
+
+    var jackBox = {};
+    jackBox.triggered = false;
+    jackBox.intervalId = null;
+
+    jackBox.lyrics = ["All a-...",
+        "-round the ...",
+        "mulberry...",
+        "bush, The...",
+        "monkey...",
+        "chased the...",
+        "wea-...",
+        "-sel...",
+        "The monkey...",
+        "stopped to...",
+        "pull up his...",
+        "sock,...",
+        "Pop!...",
+        "goes the...",
+        "wea-...",
+        "-sel."];
+    jackBox.play = function() {
+        var x = -1;
+
+
+        var lyricStart = 0;
+        var lyricEnd = jackBox.lyrics.length;
+        var interval = 1000; // interval time in milliseconds
+
+        var intervalId = setInterval(function () {
+            if (jackBox.triggered === false) {
+                if (lyricStart >= lyricEnd) {
+                    clearInterval(intervalId);
+                    console.log('All done');
+                    alert('POP!');
+                    jackBox.triggered = true;
+                } else {
+                    x++;
+                    lyricStart++;
+                    console.log(jackBox.lyrics[x]);
+
+                }
+            }
+        }, interval);
+    };
+
+    jackBox.windUp = function() {
+            jackBox.triggered = true;
+        };
+
+    jackBox.play();
+
+    var stopwatchID = setInterval(updateTimer, 1000);
+
+    var stopWatchCount = 0;
+function updateTimer() {
+    stopWatchCount++;
+    document.getElementById('stopWatch').innerHTML = stopWatchCount;
+    return stopWatchCount;
+}
+
+    var stopWatch = {};
+
+    stopWatch.intervalId = null;
 
 
 
 
-})();
+/*})();*/
 </script>
 </body>
 </html>
