@@ -203,7 +203,10 @@ a     *
 
     /*Bonus 1*/
 
-    books.forEach(function(element){
+
+
+
+   /* books.forEach(function(element){
         element.keywords= [],
             element.isAvailable = true,
             element.dateAvailable = '',
@@ -212,12 +215,14 @@ a     *
                     element.dateAvailable = new Date(Date.now() + 12096e5);
                     element.isAvailable = false;
                 }
-            },
+            };
             element.receive = function(){
                 element.available = true;
                 element.dateAvailable = new Date()
             }
     });
+
+    console.log(books.forEach(book[0]));*/
 
     /*Bonus 1*/
 
