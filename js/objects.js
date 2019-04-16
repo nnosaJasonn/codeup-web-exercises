@@ -278,6 +278,8 @@ a     *
         }
     ];
 
+
+
     function nameAndAgeChange(arr) {
         var nameString = '';
         arr.forEach(function(element) {
@@ -328,6 +330,7 @@ a     *
                 return newShot
             }
         };
+
         dogs.push(newDog)
     }
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom bonuses</title>
+</head>
+<body>
+
+    <label for="items">Enter your grocery list separated by commas:</label>
+    <textarea cols='30' rows='10'  id="items"></textarea>
+    <button id="jimmy">submit</button>
+    <hr>
+<!--
+
+    <form name="userInfo">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName">
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName">
+        <br>
+        <label for="username">username:</label>
+        <input type="text" id="username">
+        <br>
+        <label for="emailAddress">Email Address:</label>
+        <input type="text" id="emailAddress">
+        <br>
+        <label for="age">Age:</label>
+        <input type="text" id="age">
+        <br>
+        <label for="shortBio">Bio:</label>
+        <textarea name="shortBio" id="shortBio" cols="30" rows="10"></textarea>
+        <br>
+        <button id="userInfoSubmit">Submit!</button>
+
+    </form>
+-->
+
+
+<script>
+
+
+/*
+    document.getElementById('userInfoSubmit').addEventListener('click', createUserProfileDiv, false);
+*/
+
+
+
+
+
+/*
+Allow the user to enter a certain number of items and then display them on the page.
+- for each item, prompt the user for the name of the item, and store in an array of items.
+- for each item in the array of items create a new li element with the correct text and append to the DOM
+*/
+
+    document.getElementById('jimmy').addEventListener('click', makeGroceryList, false)
+
+    function makeGroceryList() {
+        var items = document.getElementById('items').value;
+        var noSpace = items.replace(/\s+/g, '');
+        var list = noSpace.split(',');
+
+        var orderedList = document.createElement('ol');
+        orderedList.setAttribute("id", "groceries");
+        document.body.appendChild(orderedList);
+
+        for(var i=0; i<list.length; i++){
+            var listItem = document.createElement("li");
+            var listText = document.createTextNode(list[i]);
+            listItem.appendChild(listText);
+            document.getElementById("groceries").appendChild(listItem);
+        }
+    }
+
+</script>
+</body>
+</html>
