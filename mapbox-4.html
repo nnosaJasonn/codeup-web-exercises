@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+
+        }
+        #map {
+            width: 600px;
+            height: 70vh;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="change">Stuff</h1>
+
+
+
+
+<div id='map' ></div>
+
+<button id="zionFly">Fly to Zion</button>
+<button id="Htown">Fly to Htown</button>
+
+
+<button id="hawaiiFly">Fly to Hawaii</button>
+
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v9\n',
+        zoom: 10,
+        center: [-98.4936, 29.4241]
+    });
+
+    document.getElementById('zionFly').addEventListener('click', flyToZion, false);
+
+    function flyToZion (){
+        map.flyTo({
+            center: [-112.98905, 37.199276]
+        })
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-113.0263, 37.30])
+            .addTo(map);
+
+    }
+
+    document.getElementById('Htown').addEventListener('click', flyToHtown, false);
+
+    function flyToHtown() {
+        map.flyTo({
+            center: [-95.331551, 29.727354]
+        })
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-95.331551, 29.727354])
+            .addTo(map);
+        document.body.style.backgroundImage = "url('img/sizzurp.jpeg')"
+        document.getElementById('change').innerText = 'Screw Tha World'
+        document.getElementById('change').style.backgroundColor = 'purple'
+        document.getElementById('change').style.color = 'white'
+
+    }
+
+
+
+    document.getElementById('hawaiiFly').addEventListener('click', flyToHawaii, false);
+    function flyToHawaii (){
+        map.flyTo({
+            center: [-157.8583, 21.3069]
+        })
+
+    }
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.4936, 29.4241])
+        .addTo(map);
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-157.8583, 21.3069])
+        .addTo(map);
+
+
+        geocode("Zion National Park", mapboxKey).then(function (result) {
+            console.log(result);
+
+        });
+
+    geocode("1422 munger street houston tx 77023", mapboxKey).then(function (result) {
+        console.log(result);
+
+    });
+
+
+
+
+    setTimeout(geoCode2, 5000);
+    function geoCode2() {
+        reverseGeocode({lng: -157.8583, lat: 21.3069}, mapboxKey).then(function (results) {
+            // logs the address for The Alamo
+            geocode(results, mapboxKey).then(function (result) {
+                map.setCenter(result)
+            });
+        });
+    }
+
+    var kSC = {
+        address: "the alamo",
+        popupHTML: "<p>Remember the Alamo!</p>"
+    };
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
+    placeMarkerAndPopup(alamoInfo, mapboxKey, map);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+
+        }
+        #map {
+            width: 600px;
+            height: 70vh;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        #container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="change">Stuff</h1>
+<br>
+    <div id="container">
+        <label for="userAddress">Enter an address:</label>
+        <input id='userAddress' type="text">
+        <br>
+        <button id="Geoffrey">Crunchatize me Cap'n</button>
+
+    </div>
+<br>
+
+<div id='map' ></div>
+
+
+
+<select name="zooms" id="zooms"> Zoom Level:
+    <option value="5" id="5" value="5">5</option>
+    <option value='15' id="15">15</option>
+    <option value="20" id="20">20</option>
+</select>
+<button id="zoomey">change zoom</button>
+
+
+<button id="hide">HIDE!</button>
+
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+
+
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v9\n',
+        zoom: 15,
+        center: [-95.331367, 29.734458]
+    });
+
+
+    document.getElementById('zoomey').addEventListener('click', zoomChange, false)
+
+
+
+    function zoomChange() {
+        var select = document.getElementById('zooms').value;
+         if (select == 5) {
+             return map.setZoom(5);
+         } else if (select == 15) {
+             return map.setZoom(15)
+         } else if (select == 20) {
+             return map.setZoom(20)
+         }
+    }
+
+
+    var restaurants = [
+        {
+            center: [-95.331367, 29.734458],
+            popupHTML: "<p>Bohemeos!</p> <img width='120' height='60' src='img/bos.jpeg' alt=''> <hr><ul><li>Chill af</li> <li>coffee</li> <li>beer</li> <li>food</li> <li>live music</li><li>Shoes: not required</li></ul>"
+        },
+        {
+            center: [-95.117, 29.53901],
+            popupHTML: "<p>Nobi Public House</p> <img width='120' height='60' src='img/NOBI.jpg' alt='banh mi'> <hr><ul><li>Bomb vietnamese</li> <li>great beer selection</li><li>Shoes: required</li></ul>"
+        },
+        {
+            center: [-95.276593, 29.685749],
+            popupHTML: "<p>Taqueria Del Sol</p> <img width='120' height='60' src='img/delSol.jpeg' alt=''><hr><ul><li>TACOS</li><li>Micheladas</li><li>Good Salsa</li><li>Shoes: required</li></ul>"
+        }
+    ];
+
+    restaurants.forEach(function(element) {
+        var marker = new mapboxgl.Marker()
+            .setLngLat(element.center)
+            .addTo(map)
+        var popup = new mapboxgl.Popup()
+            .setHTML(element.popupHTML)
+            marker.setPopup(popup)
+    })
+
+
+
+
+    geocode("8114 Park Pl Blvd, Houston, TX 77017", mapboxKey).then(function (result) {
+        console.log(result);
+
+    });
+
+    document.getElementById('Geoffrey').addEventListener('click', newLocation, false);
+
+    function newLocation() {
+        var location = document.getElementById('userAddress').value;
+
+        geocode(location, mapboxKey).then(function (result) {
+            console.log(result);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map)
+                map.flyTo({
+                    center: result
+                })
+        });
+    }
+
+
+    document.getElementById('hide').addEventListener('click', removeMarkers, false)
+
+
+
+</script>
+</body>
+</html>

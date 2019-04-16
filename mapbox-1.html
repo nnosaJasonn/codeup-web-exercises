@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <h1>Mapbox API</h1>
+    <h1>Hometown</h1>
     <br>
 
     <div id='map' ></div>
@@ -31,12 +31,30 @@
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 
+
+    <script src="js/keys.js"></script>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoibm5vc2FqYXNvbm4iLCJhIjoiY2p1anV4OHZmMGY1eDQ0bzRnZTg0aDBtdCJ9.YyhM6ymTzT3ylZmIJIAhlw';
+        mapboxgl.accessToken = mapboxKey;
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9'
+            style: 'mapbox://styles/mapbox/dark-v9\n',
+            zoom: 12,
+            center: [-95.3698, 29.7604]
         });
+
+        var intervalId = setInterval(changeMap,5000);
+        function changeMap() {
+            map.setZoom(2.5);
+            map.setStyle('mapbox://styles/mapbox/satellite-streets-v10');
+            map.setCenter(98, 39);
+        }
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-95.3698, 29.7604])
+            .addTo(map);
+
+
+
+
     </script>
 </body>
 </html>

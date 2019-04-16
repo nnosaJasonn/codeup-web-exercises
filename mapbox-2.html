@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+
+        }
+        #map {
+            width: 600px;
+            height: 70vh;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lincoln Memorial</h1>
+
+
+<div id='map' ></div>
+
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+
+
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v9\n',
+        zoom: 10,
+        center: [-77.0502, 38.8893]
+    });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-77.0502, 38.8893])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat([-98.489615, 29.426827])
+        .setHTML("<p>in memorial only!</p>")
+
+        popup.setDraggable(true)
+    marker.setPopup(popup)
+
+    </script>
+
+</body>
+</html>
