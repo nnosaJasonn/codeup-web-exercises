@@ -9,6 +9,120 @@
 
 <script>
     console.log('Hello from inline JavaScript')
+
+    function factorial(x) {
+        if (x<0) return;
+        if(x===0) return 1;
+        return x * factorial (x-1)
+    }
+
+    console.log(factorial(4));
+
+    function revStr(str){
+        if (str === '') return '';
+        return revStr(str.substr(1)) + str[0];
+    }
+
+   var reverseStr = revStr('Hello from inline JavaScript');
+    console.log(reverseStr);
+/*
+
+    revStr('cat')  returns revStr('at') + 'c'
+    revStr('at')   returns revStr('t') +  'a'
+    revStr('t')    returns revStr('') +   't'
+    revStr('')     returns               ''
+
+    Now, remember, these are all nested function calls. When you have nested function calls, the most inner nested function returns first. This initiates the ‘unwinding’ as they return in order
+*/
+
+    function makeData(input) {
+        var inputPow = Math.pow(2, input);
+        var truth1Array = [];
+        var truth2Array = [];
+        var truth3Array = [];
+        var truth4Array = [];
+        for (var i = 0; i < inputPow; i++) {
+            if (truth1Array.length < (inputPow / 2)) {
+                truth1Array.push('T')
+            } else {
+                truth1Array.push('F')
+            }
+        }
+        for (var i = 0; i < inputPow; i++) {
+            if (truth2Array.length < (inputPow * (1 / 4))) {
+                truth2Array.push('T');
+            } else if (truth2Array.length < (inputPow * (1 / 2))) {
+                truth2Array.push('F')
+            } else if (truth2Array.length < (inputPow * (3 / 4))) {
+                truth2Array.push('T')
+            } else {
+                truth2Array.push('F')
+            }
+        }
+        for (i = 0; i < inputPow; i++) {
+            if (truth3Array.length < (inputPow * (1 / 8))) {
+                truth3Array.push('T');
+            } else if (truth3Array.length < (inputPow * (1 / 4))) {
+                truth3Array.push('F')
+            } else if (truth3Array.length < (inputPow * (3 / 8))) {
+                truth3Array.push('T')
+            } else if (truth3Array.length < (inputPow * (1 / 2))) {
+                truth3Array.push('F')
+            } else if (truth3Array.length < (inputPow * (5 / 8))) {
+                truth3Array.push('T')
+            } else if (truth3Array.length < (inputPow * (3 / 4))) {
+                truth3Array.push('F')
+            } else if (truth3Array.length < (inputPow * (7 / 8))) {
+                truth3Array.push('T')
+            } else {
+                truth3Array.push('F')
+            }
+        }
+        for (i = 0; i < inputPow; i++) {
+            for (i = 0; i < inputPow; i++) {
+                if (truth4Array.length < (inputPow * (1 / 16))) {
+                    truth4Array.push('T');
+                } else if (truth4Array.length < (inputPow * (1 / 8))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (3 / 16))) {
+                    truth4Array.push('T')
+                } else if (truth4Array.length < (inputPow * (1 / 4))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (5 / 16))) {
+                    truth4Array.push('T')
+                } else if (truth4Array.length < (inputPow * (3 / 8))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (7 / 16))) {
+                    truth4Array.push('T')
+                } else if (truth4Array.length < (inputPow * (1 / 2))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (9 / 16))) {
+                    truth4Array.push('T')
+                } else if (truth4Array.length < (inputPow * (5 / 8))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (11 / 16))) {
+                    truth4Array.push('T')
+                } else if (truth4Array.length < (inputPow * (3 / 4))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (13 / 16))) {
+                    truth4Array.push('T')
+                } else if (truth4Array.length < (inputPow * (7 / 8))) {
+                    truth4Array.push('F')
+                } else if (truth4Array.length < (inputPow * (15 / 16))) {
+                    truth4Array.push('T')
+                } else {
+                    truth4Array.push('F')
+                }
+            }
+            console.log(truth4Array);
+            console.log(truth3Array);
+            console.log(truth2Array);
+            console.log(truth1Array);
+        }
+    }
+
+    makeData(4);
+
 </script>
 </body>
 </html>

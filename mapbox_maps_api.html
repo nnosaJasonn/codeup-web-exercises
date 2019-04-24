@@ -61,7 +61,7 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v9\n',
-        zoom: 15,
+        zoom: 1,
         center: [-95.331367, 29.734458]
     });
 
@@ -84,18 +84,73 @@
 
     var restaurants = [
         {
-            center: [-95.331367, 29.734458],
+            center: [-95.3698, 29.7604],
             popupHTML: "<p>Bohemeos!</p> <img width='120' height='60' src='img/bos.jpeg' alt=''> <hr><ul><li>Chill af</li> <li>coffee</li> <li>beer</li> <li>food</li> <li>live music</li><li>Shoes: not required</li></ul>"
         },
-        {
+       /* {
             center: [-95.117, 29.53901],
             popupHTML: "<p>Nobi Public House</p> <img width='120' height='60' src='img/NOBI.jpg' alt='banh mi'> <hr><ul><li>Bomb vietnamese</li> <li>great beer selection</li><li>Shoes: required</li></ul>"
         },
         {
             center: [-95.276593, 29.685749],
             popupHTML: "<p>Taqueria Del Sol</p> <img width='120' height='60' src='img/delSol.jpeg' alt=''><hr><ul><li>TACOS</li><li>Micheladas</li><li>Good Salsa</li><li>Shoes: required</li></ul>"
-        }
+        }*/
     ];
+ /*  var mapObjects= [
+    {ethiopia light city
+        center: [38.73694, 9.02722],
+        popupHTML: ''
+    };
+    {ethiopia half city
+        center: [38.73694, 9.02722],
+        popupHTML: ''
+    }
+    {indonesia cinnamon
+        center: [98.71, 2.941],-----
+        popupHTML: ''
+    }
+    {guatemala city
+        center: [-90.73333, 14.56667],
+        popupHTML: ''
+    }
+     {Hawaii american
+        center: [-155.97789, 19.72202],
+        popupHTML: ''
+    }
+     {costa rica breakfast
+        center: [-83.7534, 9.7489],
+        popupHTML: ''
+    }
+     { kenya high
+        center: [36.81667, -1.28333],
+        popupHTML: ''
+    }
+     {latin america continental
+        center: [-90.73333, 14.56667],
+        popupHTML: ''
+    }
+    {NO
+        center: [-89.93, 30.04],
+        popupHTML: ''
+    }
+    { Netherlands europe
+        center: [4.3007, 52.0705],
+        popupHTML: ''
+    }
+    { italy viennese
+        center: [11.49, 43.06],
+        popupHTML: ''
+    }
+    { italy italian
+        center: [11.49, 43.06],
+        popupHTML: ''
+    }
+    { france french
+        center: [75.1216, 20.0117],
+        popupHTML: ''
+    }*/
+
+
 
     restaurants.forEach(function(element) {
         var marker = new mapboxgl.Marker()
@@ -104,12 +159,12 @@
         var popup = new mapboxgl.Popup()
             .setHTML(element.popupHTML)
             marker.setPopup(popup)
-    })
+    });
 
 
 
 
-    geocode("8114 Park Pl Blvd, Houston, TX 77017", mapboxKey).then(function (result) {
+    geocode("La Buge, 19450 Chamboulive, France", mapboxKey).then(function (result) {
         console.log(result);
 
     });
@@ -131,7 +186,6 @@
     }
 
 
-    document.getElementById('hide').addEventListener('click', removeMarkers, false)
 
 
 

@@ -6,13 +6,98 @@
 <body>
 <h1>Konami Code</h1>
 
-<script src="/js/jquery.js"></script>
+<div id="newStuff"></div>
+
+
+<script src="js/jquery.js"></script>
 <script>
     "use strict";
 
+
+
     $(document).keyup(function(event){
         console.log(event.keyCode);
+
     });
+
+    var ultimateArray = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight',  'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']
+var keyArray = [];
+    $(document).keyup(function(event){
+        console.log(event.key);
+        keyArray.push(event.key);
+        if (event.key === 'Meta' || event.key === 'r'|| event.key ==='Alt'){
+            keyArray.pop()
+        }
+        if(keyArray.length === ultimateArray.length){
+            compareArray()
+        }
+        console.log(keyArray);
+    });
+
+    function compareArray() {
+        var ultString = ultimateArray.join(',');
+        var keyString = keyArray.join(',');
+
+        if(ultString === keyString){
+           alert('KONAMI!!!!!');
+           changeEverything();
+           return keyArray = [];
+        } else return keyArray = [];
+    }
+    function changeEverything(){
+        $('body').css('background-color', 'orange')
+                .append('<div id=\'madDiv\'>');
+        $('#madDiv').append('<form id="madlibForm">')
+        $('form').append('<label for="ml1" >Type of Worker:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml1" id="ml1" value="" placeholder="type of worker"> <br> \n' +
+            '\t\t\t\t\t\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml2">Name:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml2" id="ml2" value="" placeholder="any name" ><br>\n' +
+            '\t\t\t\t\t</div>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml3">Category of things you wouldn\'t like to eat:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml3" id="ml3" value="" placeholder= "you shouldn\'t eat these"><br>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml4">Gender Pronouns:</label>\n' +
+            '\t\t\t\t\t<select class="madlib" name="ml4" id="ml4"> \n' +
+            '\t\t\t\t\t\t<option>her</option>\n' +
+            '\t\t\t\t\t\t<option>his</option>\n' +
+            '\t\t\t\t\t\t<option>neutral</option>\n' +
+            '\t\t\t\t\t</select> <br>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml5">Body Part:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml5" id="ml5" value="" placeholder="Body Part"><br>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml6">Two Remedies:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml6" id="ml6" value="" placeholder="first remedy">\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml7" id="ml7" value="" placeholder="second remedy"><br>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml8">Three Items from Above Category:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml8" id="ml8" value="" placeholder="first item">\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml9" id="ml9" value="" placeholder="second item">\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml10" id="ml10" value="" placeholder="third item"> <br>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml9">Something Helpful:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml11" id="ml11" value="" placeholder="Something that helps"><br>\n' +
+            '\t\t\t\t\n' +
+            '\t\t\t\t\t<label for="ml10">Terrible Fate:</label>\n' +
+            '\t\t\t\t\t<input type="text" class="madlib" name="ml12" id="ml12" value="" placeholder="terrible fate"><br>\n' +
+            '\t\t\t\t\t<button class= "button" onclick="madLib()">Call Now for Your Free Psychic Reading</button>\n' +
+            '\t\t\t\t<p id="results"></p>')
+
+    }
+
+
+
+
+     function madLib() {
+
+     }
+
+
+
+
 </script>
 </body>
 </html>
