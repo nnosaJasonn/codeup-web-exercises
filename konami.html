@@ -4,7 +4,7 @@
     <title>Konami Code</title>
 </head>
 <body>
-<h1>Konami Code</h1>
+<h1 id="title">Konami Code</h1>
 
 <div id="newStuff"></div>
 
@@ -15,10 +15,6 @@
 
 
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-
-    });
 
     var ultimateArray = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight',  'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']
 var keyArray = [];
@@ -44,7 +40,10 @@ var keyArray = [];
            return keyArray = [];
         } else return keyArray = [];
     }
+
+
     function changeEverything(){
+        $('#title').html('MAD')
         $('body').css('background-color', 'orange')
                 .append('<div id=\'madDiv\'>');
         $('#madDiv').append('<form id="madlibForm">')
@@ -84,7 +83,7 @@ var keyArray = [];
             '\t\t\t\t\t<label for="ml10">Terrible Fate:</label>\n' +
             '\t\t\t\t\t<input type="text" class="madlib" name="ml12" id="ml12" value="" placeholder="terrible fate"><br>\n' +
             '\t\t\t\t\t<button class= "button" onclick="madLib()">Call Now for Your Free Psychic Reading</button>\n' +
-            '\t\t\t\t<p id="results"></p>')
+            '\t\t\t\t<h1 id="results"></h1>')
 
     }
 
@@ -92,6 +91,25 @@ var keyArray = [];
 
 
      function madLib() {
+         $( "form" ).on( "submit", function( event ) {
+             event.preventDefault();
+             var madlibResponse = $( this ).serialize();
+             var madlibResponseArr =madlibResponse.split('&');
+             console.log(madlibResponseArr);
+            for (var i =0; i<madlibResponseArr.length; i++){
+                madlibResponseArr[i] = madlibResponseArr[i].substring(madlibResponseArr[i].indexOf('=') + 1);
+            }
+             if (madlibResponseArr[3] === "neutral") {
+                 madlibResponseArr[3] = "zir"
+                 var pronounTwo = "zim"
+             } else if (madlibResponseArr[3]==="his") {
+                 pronounTwo = "him"
+             } else {
+                 pronounTwo = "her"
+             };
+             console.log(madlibResponseArr);
+             $('#results').html('A(n) ' + madlibResponseArr[0] + ' named ' + madlibResponseArr[1] + ' ate ' + madlibResponseArr[2] + ' all day <br> ' + madlibResponseArr[3] + ' ' + madlibResponseArr[4] + ' not optimum craved ' + madlibResponseArr[5] + ' and ' + madlibResponseArr[6] + '<br> ' + madlibResponseArr[3] + ' ' + madlibResponseArr[7] + ' and ' + madlibResponseArr[8] + ' and ' + madlibResponseArr[9] + ' won\'t suffice<br> has no ' + madlibResponseArr[10] + ' to help ' + pronounTwo + ' so ' + madlibResponseArr[1] + ' just ' + madlibResponseArr[11] + '...')
+         });
 
      }
 
