@@ -26,6 +26,22 @@ function showMultiplicationTable2 (num) {
 console.log(showMultiplicationTable2(7));
 */
 
+function addToArray(x) {
+    var output = []
+
+    for(var i =0; i<x; i++) {
+        output.push('t');
+        output.push('f');
+        for(var j=0; j<i - 1; j++){
+            output.push('t');
+            output.push('f');
+        }
+    }
+
+    console.log(output);
+}
+/*
+
 showMultiplicationTable(2);
 showMultiplicationTable(47);
 
@@ -69,3 +85,4 @@ for (var i = 100; i>=5; i-=5){
 }
 
 
+*/

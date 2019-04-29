@@ -11,7 +11,7 @@ var winningOptions = [
 ];
 
 $('#start').click(function(){
-
+    if ()
 });
 
 $('.tic').click(function(){

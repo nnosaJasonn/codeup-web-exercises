@@ -3,8 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
+
+<style>
+    ul{
+        display: none;
+    }
+    h2{
+        display: none;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #div1{
+        background-image: url('img/sizzurp.jpeg');
+        height: 200px;
+        width: 200px;
+        display: flex;
+        border: 10px solid brown;
+        margin: 10px;
+    }
+    #div2{
+        background-image: url('img/bigmoe.jpeg');
+        height: 200px;
+        width: 200px;
+        display: flex;
+        border: 10px solid brown;
+        margin: 10px;
+
+    }
+    #div3{
+        background-image: url('img/48x48.svg');
+        height: 200px;
+        width: 200px;
+        display: flex;
+        border: 10px solid brown;
+        margin: 10px;
+
+    }
+    #buttons{
+        align-self: flex-end;
+    }
+    #register{
+        display: none;
+    }
+
+</style>
 <body>
+
+<div id="hiderDiv">
+    <h1>Would you like to sign up for our newsletter? <span> x</span></h1>
+</div>
+
+<h2>Register Or Die!</h2>
+
+
+
 <a class='hoobajooba' href="#">change stuff</a>
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
@@ -51,8 +108,44 @@
 
     </dd>
 </dl>
+<h3>Big Bend</h3>
+<ul>
+    <li>Is in Texas</li>
+    <li>Near Mexico</li>
+    <li>Bears</li>
+</ul>
+
+<h3>Yellowstone</h3>
+<ul>
+    <li>Yogi Bear</li>
+    <li>Good Trees</li>
+    <li>sometimes cold</li>
+</ul>
+<h3>Rocky Mountain</h3>
+<ul>
+    <li>Sometimes Snow</li>
+    <li>Mountain-y</li>
+    <li>Dwelling place of wildlife</li>
+</ul>
+<button id="change">parky-park and the funky bunch</button>
+<br>
+<div class="container">
+    <div id="div1"></div>
+
+    <div id="div2"></div>
+
+    <div id="div3"></div>
+    <div id="buttons">
+        <button id="swap">swap</button>
+        <button id="edit">change</button>
+        <button id="switcheroo">switcheroo</button>
+    </div>
+</div>
+
+
 
 <script src="js/jquery.js"></script>
+
 
 <script>
     $('a').click(function(){
@@ -65,9 +158,73 @@
         }
     });
 
+    $('#swap').click(function(){
+        $(this).toggleClass('hooba');
+        if($('#swap').hasClass('hooba')) {
+            $('#div1').css('background-image', "url('img/bigmoe.jpeg')");
+            $('#div2').css('background-image', "url('img/48x48.svg')");
+            $('#div3').css('background-image', "url('img/sizzurp.jpeg')");
+        } else {
+            $('#div1').css('background-image', "url('img/sizzurp.jpeg')");
+            $('#div2').css('background-image', "url('img/bigmoe.jpeg')");
+            $('#div3').css('background-image', "url('img/48x48.svg')");
+        }
+    });
+
+    $('#edit').click(function(){
+        $(this).toggleClass('hooba');
+        if($('#edit').hasClass('hooba')) {
+            $('#div1').css('background-image', "url('img/48x48.svg')");
+            $('#div2').css('background-image', "url('img/sizzurp.jpeg')");
+            $('#div3').css('background-image', "url('img/bigmoe.jpeg')");
+        } else {
+            $('#div1').css('background-image', "url('img/sizzurp.jpeg')");
+            $('#div2').css('background-image', "url('img/bigmoe.jpeg')");
+            $('#div3').css('background-image', "url('img/48x48.svg')");
+        }
+    });
+
+    $('#switcheroo').click(function(){
+        $(this).toggleClass('hooba');
+        if($('#switcheroo').hasClass('hooba')) {
+            $('#div1').css('background-image', "url('img/48x48.svg')");
+            $('#div2').css('background-image', "url('img/sizzurp.jpeg')");
+            $('#div3').css('background-image', "url('img/bigmoe.jpeg')");
+        } else {
+            $('#div1').css('background-image', "url('img/sizzurp.jpeg')");
+            $('#div2').css('background-image', "url('img/bigmoe.jpeg')");
+            $('#div3').css('background-image', "url('img/48x48.svg')");
+        }
+    });
+
+
+    $('#change').click(function(){
+            $('li:last-child').css('background-color', 'yellow')
+    });
+
+    $('h3').click(function(){
+        $(this).next().css('font-weight', "bold").fadeToggle(1000)
+    });
+   /* $('h3').click(function(){
+        $(this).next().slideToggle();
+    });*/
+
+    $('li').click(function(){
+       $(this).parent().children('li:first-child').css('color', 'blue')
+    });
+
     $('dt').click(function(){
         $(this).css('background-color', 'orange')
-    })
+    });
+    $('span').click(function(){
+        $('#hiderDiv').hide();
+    });
+
+        setTimeout(function message(){
+            $('h2').fadeIn(5000)
+    }, 8000);
+
+
 </script>
 </body>
 </html>
