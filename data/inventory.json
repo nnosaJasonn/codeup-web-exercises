@@ -35,7 +35,7 @@
         "title": "slim jim",
         "quantity": 25,
         "categories": [
-            "tool"
+            "tool", "theft-device"
         ],
         "price": 8.95
     }

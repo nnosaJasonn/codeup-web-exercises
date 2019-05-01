@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        span{
+            font-weight: normal;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>Weather App</h1>
+<div class="container">
+    <div class="row">
+        <div class="col" >
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 id="date" class="card-title">Today</h5>
+
+                    <div id="today"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col" >
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Tomorrow</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <div id="tomorrow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col" >
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">Today</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <div id="next"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/keys.js"></script>
+<script src='js/jquery.js'></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+-->
+<script>
+
+    var corsUrl = 'https://cors-anywhere.herokuapp.com/';
+    var darkskyUrl = 'https://api.darksky.net/forecast/';
+    var lat = 29.4241;
+    var lng = -98.4936;
+
+var weatherObject = {};
+    var weather = $.ajax(corsUrl + darkskyUrl + darkskyKey + "/" + lat +',' + lng);
+        weather.done(function(object){
+        weatherObject = object;
+        console.log(weatherObject);
+        todayWeather();
+        tomorrowWeather();
+        nextWeather();
+    });
+
+    function getData(num) {
+        var day = num;
+        var icon = 'icon/' + weatherObject.daily.data[day].icon + '.svg';
+        var high = weatherObject.daily.data[day].apparentTemperatureHigh;
+        var low = weatherObject.daily.data[day].apparentTemperatureLow;
+        var clouds = weatherObject.daily.data[day].summary;
+        var wind = weatherObject.daily.data[day].windSpeed;
+        var humidity = weatherObject.daily.data[day].humidity;
+        var pressure = weatherObject.daily.data[day].pressure;
+        var seconds = weatherObject.daily.data[day].time;
+        var dateObject = new Date(seconds * 1000);
+        weatherObject.data = [icon, high, low, clouds, wind, humidity, pressure, dateObject];
+
+        return weatherObject;
+    }
+
+    function todayWeather(num){
+        getData(0);
+        $('#today').html('<h1>' + weatherObject.data[1] + "°/" + weatherObject.data[2] + '°</h1><img src="' + weatherObject.data[0]+'"/><h3><span>' + weatherObject.data[3] + "</span></h3><h3>Humidity: <span>" + weatherObject.data[4] + "</span></h3><h3>Wind: <span>" + weatherObject.data[5] + "</span></h3><h3>Pressure: <span>" + weatherObject.data[6] + "</span></h3>");
+        $('#date').append('<h6 class="card-subtitle mb-2 text-muted">' + weatherObject.data[7] + '</h6>')
+    }
+
+
+    function tomorrowWeather(num){
+        getData(1);
+        $('#tomorrow').html('<h1>' + weatherObject.data[1] + "°/" + weatherObject.data[2] + '°</h1><img src="' + weatherObject.data[0]+'"/><h3><span>' + weatherObject.data[3] + "</span></h3><h3>Humidity: <span>" + weatherObject.data[4] + "</span></h3><h3>Wind: <span>" + weatherObject.data[5] + "</span></h3><h3>Pressure: <span>" + weatherObject.data[6] + "</span></h3>");
+    }
+
+    function nextWeather(){
+        getData(2);
+        $('#next').html('<h1>' + weatherObject.data[1] + "°/" + weatherObject.data[2] + '°</h1><img src="' + weatherObject.data[0]+'"/><h3><span>' + weatherObject.data[3] + "</span></h3><h3>Humidity: <span>" + weatherObject.data[4] + "</span></h3><h3>Wind: <span>" + weatherObject.data[5] + "</span></h3><h3>Pressure: <span>" + weatherObject.data[6] + "</span></h3>");
+    }
+
+
+
+
+    /*  mapboxgl.accessToken = mapboxKey;
+      var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/dark-v9\n',
+          zoom: 1,
+          center: [lng, lat]
+      });
+  */
+</script>
+</body>
+</html>
