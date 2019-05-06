@@ -1,7 +1,7 @@
 /*
  * Complete the TODO items below
  */
-const users = [
+/*let users = [
   {
     name: 'zach',
     email: 'zach@codeup.com',
@@ -27,7 +27,7 @@ const users = [
     email: 'justin@codeup.com',
     languages: ['html', 'css', 'javascript', 'php']
   }
-];
+];*/
 
 
 
