@@ -8,11 +8,11 @@
 
 
 <script>
-'use strict';
+    'use strict';
 
-/*1. Create a function that returns a random day of the week*/
+    /*1. Create a function that returns a random day of the week*/
 
-    function randomDay (){
+    function randomDay() {
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var randomDay = Math.floor(Math.random() * days.length);
         return days[randomDay];
@@ -24,7 +24,7 @@
 
     function letterPosition() {
 
-        var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
         var randomLetter = Math.floor(Math.random() * letters.length);
         console.log(letters[randomLetter]);
         var letterIndex = letters.indexOf(letters[randomLetter]) + 1;
@@ -40,12 +40,13 @@
     function longestString(arr) {
         var longth = 0;
         var longest;
-        for(var i = 0; i < arr.length; i++) {
-            if(arr[i].length > longth) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].length > longth) {
                 var longth = arr[i].length;
                 longest = arr[i]
             }
-        } return longest
+        }
+        return longest
     }
 
     console.log(longestString(longStrings));
@@ -55,19 +56,21 @@
 
     var arr1 = ['bob', 1, true, 1, 17];
     var arr2 = [2, null, undefined, 0, 2, "apple"];
+
     function addArray(arr) {
         var arrayAdd = 0;
-        for(var i=0; i<arr.length; i++) {
+        for (var i = 0; i < arr.length; i++) {
             if (typeof arr[i] === 'number') {
                 arrayAdd += arr[i]
             }
-        } return arrayAdd
+        }
+        return arrayAdd
     }
 
     console.log('each of the numbers in array 1 added together equal ' + addArray(arr1));
     console.log('each of the numbers in array 2 added together equal ' + addArray(arr2));
 
-    function compareArrays (arr1, arr2) {
+    function compareArrays(arr1, arr2) {
         if (addArray(arr1) === addArray(arr2)) {
             return true;
         } else {
@@ -81,15 +84,16 @@
 
     console.log(mixedCaseLetters);
 
-    function toOtherCase (str) {
+    function toOtherCase(str) {
         var strToArr = str.split('');
-        for(var i=0; i<strToArr.length; i++) {
+        for (var i = 0; i < strToArr.length; i++) {
             if (strToArr[i] == strToArr[i].toLowerCase()) {
                 strToArr[i] = strToArr[i].toUpperCase();
             } else if (strToArr[i] === strToArr[i].toUpperCase()) {
                 strToArr[i] = strToArr[i].toLowerCase();
             }
-        } str = strToArr.join('');
+        }
+        str = strToArr.join('');
         return str;
     }
 
@@ -98,21 +102,21 @@
     var stringWNumber = 'george7';
 
     var otherString = 'siggitybiggityhooskah23';
-      function stringNumber(str){
-          var numberInString = str.match(/\d+$/),number;
-          if(numberInString) {
-              number=numberInString[0];
-              if (number == str.length) {
-                  return true;
-              } else {
-                  return false;
-              }
-          }
-      }
 
-console.log(stringNumber(stringWNumber));
-console.log(stringNumber(otherString));
+    function stringNumber(str) {
+        var numberInString = str.match(/\d+$/), number;
+        if (numberInString) {
+            number = numberInString[0];
+            if (number == str.length) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 
+    console.log(stringNumber(stringWNumber));
+    console.log(stringNumber(otherString));
 
 
 </script>

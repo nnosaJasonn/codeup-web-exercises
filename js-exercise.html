@@ -36,7 +36,7 @@
     var isExpired = false;
     var premium = true;
 
-    var offerAvailable =  !isExpired && (twoItemsBought || premium);
+    var offerAvailable = !isExpired && (twoItemsBought || premium);
     console.log(offerAvailable);
 
     /* question 4 */
@@ -49,8 +49,6 @@
     var longEnough = password.length >= 5;
     var noUsername = !(password.includes(username));
     var notTooLong = password.length <= 20;
-
-
 
 
     var passwordGud = longEnough && noSpacePW && noSpaceUN && noUsername && notTooLong;

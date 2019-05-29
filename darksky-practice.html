@@ -11,10 +11,8 @@
 
 <script src="js/keys.js"></script>
 <script src='js/jquery.js'></script>
-<!--
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
--->
 <script>
 
     var corsUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -22,7 +20,7 @@
     var lat = 29.734458/*29.4241;*/
     var lng = -95.331367/*-98.4936;*/
 
-    $.get(corsUrl + darkskyUrl + darkskyKey + "/" + lat +',' + lng).done(function(data){
+    $.get(corsUrl + darkskyUrl + darkskyKey + "/" + lat + ',' + lng).done(function (data) {
         var seconds = data.currently.time;
         var dateObject = new Date(seconds * 1000);
         var high = data.daily.data[0].apparentTemperatureHigh;
@@ -37,18 +35,18 @@
         $('#forecast').html("<h1>Today's Forecast is:</h1>" + '<h4>' + summary + "</h4><p>High: <span>" + high + "</span></p><br><p>Low: <span>" + low + "</span></p><br><p>Cloud Cover: <span>" + clouds + "</span></p><br><p>With a Humidity of: <span>" + humidity + "</span></p>")
         $('#forecast').append("<h1>This Week's Forecast summary:</h1><h4>" + weeklySummary + "</h4>")
 
-    })
-
-    $.get(corsUrl + darkskyUrl + darkskyKey + '/' + )
-
-  /*  mapboxgl.accessToken = mapboxKey;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v9\n',
-        zoom: 1,
-        center: [lng, lat]
     });
-*/
+
+    $.get(corsUrl + darkskyUrl + darkskyKey + '/' + lat + ',' + lng)
+
+      mapboxgl.accessToken = mapboxKey;
+      var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/dark-v9\n',
+          zoom: 1,
+          center: [lng, lat]
+      });
+
 </script>
 </body>
 </html>

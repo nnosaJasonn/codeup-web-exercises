@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <title>Property Search</title>
     <link rel="stylesheet" href="css/property-search.css">
-   <!--- <style>
-        .main{
-            background: url(img/SAskyline.jpg);
-            background-repeat: no-repeat;
-            background-size: 100% 40vh ;
-            /*opacity:  0.6;*/
 
-        }
-
-        button{
-            display:flex;
-            position: relative;
-
-        }
-        #fancy_title{
-            font-weight: bold;
-        font-size: 60px;
-
-        img, #smaller{
-
-        }
-
-        }
-
-
-        h1 span{
-            color: #f00
-        }
-
-        .not_trans {
-
-
-            /*opacity: unset;
-            display: flex;*/
-        }
-
-        .property_type {
-           position:relative;
-            top: 10px;
-
-        }
-        .size{
-            position: relative;
-            top: -155px;
-            right: -500px;*/
-        }
-        .price{
-            clear: both;
-            position: relative;
-
-            left: 210px;
-            top: -303px;
-        }
-
-
-
-
-
-        .button {
-            background-color: blue; /* Green */
-            border: none;
-            color: white;
-            padding: 4px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 4px 2px;
-            cursor: pointer;
-            font-size: 10px;
-            border-radius: 15px;
-            position: relative;
-            top: -210px;
-            left: 307px;
-        }
-    </style>--->
 </head>
 <body>
 
@@ -95,111 +21,110 @@
 
         <form method="GET" action="https://request-inspector.glitch.me">
 
-        <div class="container">
+            <div class="container">
 
 
-            <div class="property_type">
+                <div class="property_type">
 
-            <h4>Property type</h4>
-                <label for="buy_sell">Buy or Sell:
-                    <select id="buy_sell" name="buy_sell">
-                        <option value="buy">Buy</option>
-                        <option value="sell">Sell</option>
-                    </select><br>
-                </label>
-
-
-            <label for="house">House
-                <input type="checkbox" id="house" name="property_type" value="house">
-            </label>
-            <br>
-
-            <label for="apartment">Apartment
-                <input type="checkbox" id="apartment" name="property_type" value="apartment">
-            </label>
-            <br>
-
-            <label for="commercial">Commercial
-                <input type="checkbox" id="commercial" name="property_type" value="Commercial">
-            </label>
-            <br>
-
-            <label for="condo">Condo
-                <input type="checkbox" id="condo" name="property_type" value="condo">
-            </label>
-            <br>
-
-            <label for="zipcode">Zipcode:
-                <input type="text" id="zipcode" placeholder="Enter your zipcode" name="zipcode">
-            </label>
-            <br>
-
-        </div>
+                    <h4>Property type</h4>
+                    <label for="buy_sell">Buy or Sell:
+                        <select id="buy_sell" name="buy_sell">
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                        </select><br>
+                    </label>
 
 
+                    <label for="house">House
+                        <input type="checkbox" id="house" name="property_type" value="house">
+                    </label>
+                    <br>
 
-         <div class="price">
-            <h4>Price Range</h4>
-            <label for="min_price">Minimum price: $
-                <input type="number" id="min_price" placeholder="Enter your min price" name="min_price">
-            </label>
-            <br>
+                    <label for="apartment">Apartment
+                        <input type="checkbox" id="apartment" name="property_type" value="apartment">
+                    </label>
+                    <br>
 
-            <label for="max_price">Maximum price: $
-                <input type="number" id="max_price" placeholder="Enter your max price" name="max_price">
-            </label>
-            <br>
-         </div>
+                    <label for="commercial">Commercial
+                        <input type="checkbox" id="commercial" name="property_type" value="Commercial">
+                    </label>
+                    <br>
 
-            <div class="size">
-                <h4>Select Property size</h4>
+                    <label for="condo">Condo
+                        <input type="checkbox" id="condo" name="property_type" value="condo">
+                    </label>
+                    <br>
 
-                <label for="sq_foot_min">Minimum property size:
-                    <input type="range" id="sq_foot_min" min="400" max="6000" class="slider" name="sq_foot"> <span id="demo"></span>ft <sup>2</sup>
-                </label>
-                <br>
-                <label for="sq_foot_max">Maximum property size:
-                    <input type="range" id="sq_foot_max" min="400" max="6000" class="slider" name="sq_foot"> <span id="sq_foot"></span>ft <sup>2</sup>
-                </label>
-                <br>
-                <label for="num_of_bedrooms">Number of Bedrooms:
-                    <input type="number" id="num_of_bedrooms" name="bedrooms">
-                </label>
-                <br>
-                <label for="bathrooms">Number of Bathrooms:
-                    <input type="number" id="bathrooms" name="bathrooms">
-                </label>
+                    <label for="zipcode">Zipcode:
+                        <input type="text" id="zipcode" placeholder="Enter your zipcode" name="zipcode">
+                    </label>
+                    <br>
+
+                </div>
+
+
+                <div class="price">
+                    <h4>Price Range</h4>
+                    <label for="min_price">Minimum price: $
+                        <input type="number" id="min_price" placeholder="Enter your min price" name="min_price">
+                    </label>
+                    <br>
+
+                    <label for="max_price">Maximum price: $
+                        <input type="number" id="max_price" placeholder="Enter your max price" name="max_price">
+                    </label>
+                    <br>
+                </div>
+
+                <div class="size">
+                    <h4>Select Property size</h4>
+
+                    <label for="sq_foot_min">Minimum property size:
+                        <input type="range" id="sq_foot_min" min="400" max="6000" class="slider" name="sq_foot"> <span
+                                id="demo"></span>ft <sup>2</sup>
+                    </label>
+                    <br>
+                    <label for="sq_foot_max">Maximum property size:
+                        <input type="range" id="sq_foot_max" min="400" max="6000" class="slider" name="sq_foot"> <span
+                                id="sq_foot"></span>ft <sup>2</sup>
+                    </label>
+                    <br>
+                    <label for="num_of_bedrooms">Number of Bedrooms:
+                        <input type="number" id="num_of_bedrooms" name="bedrooms">
+                    </label>
+                    <br>
+                    <label for="bathrooms">Number of Bathrooms:
+                        <input type="number" id="bathrooms" name="bathrooms">
+                    </label>
+                </div>
             </div>
-        </div>
 
 
-        <button type="submit" class="button">Search Now!</button>
+            <button type="submit" class="button">Search Now!</button>
 
-    </form>
+        </form>
     </div>
 </main>
 
 
-
 <script>
-        var sliderMin = document.getElementById("sq_foot_min");
-        var outputMin = document.getElementById("demo");
-        outputMin.innerHTML = sliderMin.value;
+    var sliderMin = document.getElementById("sq_foot_min");
+    var outputMin = document.getElementById("demo");
+    outputMin.innerHTML = sliderMin.value;
 
 
+    sliderMin.oninput = function () {
+        outputMin.innerHTML = this.value;
+    };
 
-        sliderMin.oninput = function() {
-            outputMin.innerHTML = this.value;
-        };
+    var sliderMax = document.getElementById("sq_foot_max");
+    var outputMax = document.getElementById("sq_foot");
+    outputMax.innerHTML = sliderMax.value;
 
-        var sliderMax = document.getElementById("sq_foot_max");
-        var outputMax = document.getElementById("sq_foot");
-        outputMax.innerHTML = sliderMax.value;
-
-        sliderMax.oninput = function() {
-            outputMax.innerHTML = this.value;
-        }
-    </script>
+    sliderMax.oninput = function () {
+        outputMax.innerHTML = this.value;
+    }
+</script>
 
 </body>
 </html>

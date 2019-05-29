@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'/>
     <style>
         body {
             margin: 0;
 
         }
+
         #map {
             width: 600px;
             height: 70vh;
             margin: 0 auto;
         }
+
         h1 {
             text-align: center;
         }
@@ -24,9 +26,7 @@
 <h1 id="change">Stuff</h1>
 
 
-
-
-<div id='map' ></div>
+<div id='map'></div>
 
 <button id="zionFly">Fly to Zion</button>
 <button id="Htown">Fly to Htown</button>
@@ -49,7 +49,7 @@
 
     document.getElementById('zionFly').addEventListener('click', flyToZion, false);
 
-    function flyToZion (){
+    function flyToZion() {
         map.flyTo({
             center: [-112.98905, 37.199276]
         })
@@ -69,16 +69,16 @@
             .setLngLat([-95.331551, 29.727354])
             .addTo(map);
         document.body.style.backgroundImage = "url('img/sizzurp.jpeg')"
-        document.getElementById('change').innerText = 'Screw Tha World'
+        document.getElementById('change').innerText = 'H-tine hol it dine';
         document.getElementById('change').style.backgroundColor = 'purple'
         document.getElementById('change').style.color = 'white'
 
     }
 
 
-
     document.getElementById('hawaiiFly').addEventListener('click', flyToHawaii, false);
-    function flyToHawaii (){
+
+    function flyToHawaii() {
         map.flyTo({
             center: [-157.8583, 21.3069]
         })
@@ -94,10 +94,10 @@
         .addTo(map);
 
 
-        geocode("Zion National Park", mapboxKey).then(function (result) {
-            console.log(result);
+    geocode("Zion National Park", mapboxKey).then(function (result) {
+        console.log(result);
 
-        });
+    });
 
     geocode("1422 munger street houston tx 77023", mapboxKey).then(function (result) {
         console.log(result);
@@ -105,9 +105,8 @@
     });
 
 
-
-
     setTimeout(geoCode2, 5000);
+
     function geoCode2() {
         reverseGeocode({lng: -157.8583, lat: 21.3069}, mapboxKey).then(function (results) {
             // logs the address for The Alamo
@@ -123,7 +122,7 @@
     };
 
     function placeMarkerAndPopup(info, token, map) {
-        geocode(info.address, token).then(function(coordinates) {
+        geocode(info.address, token).then(function (coordinates) {
             var popup = new mapboxgl.Popup()
                 .setHTML(info.popupHTML);
             var marker = new mapboxgl.Marker()
@@ -133,6 +132,7 @@
             popup.addTo(map);
         });
     }
+
     placeMarkerAndPopup(alamoInfo, mapboxKey, map);
 
 </script>

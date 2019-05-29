@@ -135,13 +135,12 @@
 
 
 
-/*
     books.forEach(function(book, index) {
         console.log('Book # ' + (index + 1) + "'");
         console.log('Title: ' + book.title);
         console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
         console.log('---------')
-    });*/
+    });
 
 
     /**
@@ -206,7 +205,7 @@ a     *
 
 
 
-   /* books.forEach(function(element){
+    books.forEach(function(element){
         element.keywords= [],
             element.isAvailable = true,
             element.dateAvailable = '',
@@ -222,7 +221,7 @@ a     *
             }
     });
 
-    console.log(books.forEach(book[0]));*/
+    console.log(books.forEach(book[0]));
 
     /*Bonus 1*/
 
@@ -355,7 +354,7 @@ a     *
 })();
 
 
-/*        {
+ /*       {
             breed: 'chihuahua',
             weightInPounds: 50,
             age: 5,
@@ -382,6 +381,5 @@ a     *
                 dogs[0].shotRecords.push(newShot)
             }
         }
+*/
 
-
-        */

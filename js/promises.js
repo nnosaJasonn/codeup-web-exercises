@@ -1,4 +1,4 @@
-/*const wait = (num) => {
+const wait = (num) => {
     return new Promise((resolve,reject) => {
        setTimeout(()=>{
            if(typeof num === 'number') {
@@ -15,7 +15,7 @@
 };
 
 wait(2000);
-wait('banana');*/
+wait('banana');
 
 
 /*last commit made on master branch 'https://api.github.com/users/nnosajasonn/events'*/

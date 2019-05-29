@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'/>
     <style>
         body {
             margin: 0;
 
         }
+
         #map {
             width: 600px;
             height: 70vh;
             margin: 0 auto;
         }
+
         h1 {
             text-align: center;
         }
 
-        #container{
+        #container {
             text-align: center;
         }
     </style>
@@ -27,17 +29,16 @@
 
 <h1 id="change">Stuff</h1>
 <br>
-    <div id="container">
-        <label for="userAddress">Enter an address:</label>
-        <input id='userAddress' type="text">
-        <br>
-        <button id="Geoffrey">Crunchatize me Cap'n</button>
+<div id="container">
+    <label for="userAddress">Enter an address:</label>
+    <input id='userAddress' type="text">
+    <br>
+    <button id="Geoffrey">Crunchatize me Cap'n</button>
 
-    </div>
+</div>
 <br>
 
-<div id='map' ></div>
-
+<div id='map'></div>
 
 
 <select name="zooms" id="zooms"> Zoom Level:
@@ -69,99 +70,42 @@
     document.getElementById('zoomey').addEventListener('click', zoomChange, false)
 
 
-
     function zoomChange() {
         var select = document.getElementById('zooms').value;
-         if (select == 5) {
-             return map.setZoom(5);
-         } else if (select == 15) {
-             return map.setZoom(15)
-         } else if (select == 20) {
-             return map.setZoom(20)
-         }
+        if (select == 5) {
+            return map.setZoom(5);
+        } else if (select == 15) {
+            return map.setZoom(15)
+        } else if (select == 20) {
+            return map.setZoom(20)
+        }
     }
 
 
     var restaurants = [
         {
             center: [-95.3698, 29.7604],
-            popupHTML: "<p>Bohemeos!</p> <img width='120' height='60' src='img/bos.jpeg' alt=''> <hr><ul><li>Chill af</li> <li>coffee</li> <li>beer</li> <li>food</li> <li>live music</li><li>Shoes: not required</li></ul>"
+            popupHTML: "<p>Bohemeos!</p> <img width='120' height='60' src='img/bos.jpeg' alt=''> <hr><ul><li>coffee</li> <li>beer</li> <li>food</li> <li>live music</li><li>Shoes: not required</li></ul>"
         },
-       /* {
+        {
             center: [-95.117, 29.53901],
             popupHTML: "<p>Nobi Public House</p> <img width='120' height='60' src='img/NOBI.jpg' alt='banh mi'> <hr><ul><li>Bomb vietnamese</li> <li>great beer selection</li><li>Shoes: required</li></ul>"
         },
         {
             center: [-95.276593, 29.685749],
             popupHTML: "<p>Taqueria Del Sol</p> <img width='120' height='60' src='img/delSol.jpeg' alt=''><hr><ul><li>TACOS</li><li>Micheladas</li><li>Good Salsa</li><li>Shoes: required</li></ul>"
-        }*/
+        }
     ];
- /*  var mapObjects= [
-    {ethiopia light city
-        center: [38.73694, 9.02722],
-        popupHTML: ''
-    };
-    {ethiopia half city
-        center: [38.73694, 9.02722],
-        popupHTML: ''
-    }
-    {indonesia cinnamon
-        center: [98.71, 2.941],-----
-        popupHTML: ''
-    }
-    {guatemala city
-        center: [-90.73333, 14.56667],
-        popupHTML: ''
-    }
-     {Hawaii american
-        center: [-155.97789, 19.72202],
-        popupHTML: ''
-    }
-     {costa rica breakfast
-        center: [-83.7534, 9.7489],
-        popupHTML: ''
-    }
-     { kenya high
-        center: [36.81667, -1.28333],
-        popupHTML: ''
-    }
-     {latin america continental
-        center: [-90.73333, 14.56667],
-        popupHTML: ''
-    }
-    {NO
-        center: [-89.93, 30.04],
-        popupHTML: ''
-    }
-    { Netherlands europe
-        center: [4.3007, 52.0705],
-        popupHTML: ''
-    }
-    { italy viennese
-        center: [11.49, 43.06],
-        popupHTML: ''
-    }
-    { italy italian
-        center: [11.49, 43.06],
-        popupHTML: ''
-    }
-    { france french
-        center: [75.1216, 20.0117],
-        popupHTML: ''
-    }*/
 
 
-
-    restaurants.forEach(function(element) {
+    restaurants.forEach(function (element) {
         var marker = new mapboxgl.Marker()
             .setLngLat(element.center)
             .addTo(map)
         var popup = new mapboxgl.Popup()
             .setHTML(element.popupHTML)
-            marker.setPopup(popup)
+        marker.setPopup(popup)
     });
-
-
 
 
     geocode("La Buge, 19450 Chamboulive, France", mapboxKey).then(function (result) {
@@ -179,14 +123,11 @@
             var marker = new mapboxgl.Marker()
                 .setLngLat(result)
                 .addTo(map)
-                map.flyTo({
-                    center: result
-                })
+            map.flyTo({
+                center: result
+            })
         });
     }
-
-
-
 
 
 </script>

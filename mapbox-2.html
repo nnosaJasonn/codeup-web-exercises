@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'/>
     <style>
         body {
             margin: 0;
 
         }
+
         #map {
             width: 600px;
             height: 70vh;
             margin: 0 auto;
         }
+
         h1 {
             text-align: center;
         }
@@ -24,7 +26,7 @@
 <h1>Lincoln Memorial</h1>
 
 
-<div id='map' ></div>
+<div id='map'></div>
 
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
@@ -48,10 +50,10 @@
         .setLngLat([-98.489615, 29.426827])
         .setHTML("<p>in memorial only!</p>")
 
-        popup.setDraggable(true)
+    popup.setDraggable(true)
     marker.setPopup(popup)
 
-    </script>
+</script>
 
 </body>
 </html>

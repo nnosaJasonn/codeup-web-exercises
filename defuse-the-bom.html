@@ -12,42 +12,41 @@
 <h3 id="stopWatch"></h3>
 
 <script>
-/*(function() {*/
+    /*(function() {*/
     "use strict";
-/*
+    /*
 
-    var detonationTimer = 5;
+        var detonationTimer = 5;
 
-    var intervalId = setInterval(updateTimer,1000);
+        var intervalId = setInterval(updateTimer,1000);
 
 
-    // TODO: This function needs to be called once every second
-    function updateTimer() {
-        if (detonationTimer == 0) {
-            alert('EXTERMINATE!');
-            document.body.innerHTML = '';
-        } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
+        // TODO: This function needs to be called once every second
+        function updateTimer() {
+            if (detonationTimer == 0) {
+                alert('EXTERMINATE!');
+                document.body.innerHTML = '';
+            } else if (detonationTimer > 0) {
+                document.getElementById('timer').innerHTML = detonationTimer;
+            }
+
+            detonationTimer--;
         }
 
-        detonationTimer--;
-    }
+        // TODO: When this function runs, it needs to
+        // cancel the interval/timeout for updateTimer()
+        function defuseTheBOM() {
+            clearInterval(intervalId)
+        }
 
-    // TODO: When this function runs, it needs to
-    // cancel the interval/timeout for updateTimer()
-    function defuseTheBOM() {
-        clearInterval(intervalId)
-    }
-
-    // Don't modify anything below this line!
-    //
-    // This causes the defuseTheBOM() function to be called
-    // when the "defuser" button is clicked.
-    // We will learn about events in the DOM lessons
-    var defuser = document.getElementById('defuser');
-    defuser.addEventListener('click', defuseTheBOM);
-*/
-
+        // Don't modify anything below this line!
+        //
+        // This causes the defuseTheBOM() function to be called
+        // when the "defuser" button is clicked.
+        // We will learn about events in the DOM lessons
+        var defuser = document.getElementById('defuser');
+        defuser.addEventListener('click', defuseTheBOM);
+    */
 
 
     var jackBox = {};
@@ -70,7 +69,7 @@
         "goes the...",
         "wea-...",
         "-sel."];
-    jackBox.play = function() {
+    jackBox.play = function () {
         var x = -1;
 
 
@@ -95,29 +94,28 @@
         }, interval);
     };
 
-    jackBox.windUp = function() {
-            jackBox.triggered = true;
-        };
+    jackBox.windUp = function () {
+        jackBox.triggered = true;
+    };
 
     jackBox.play();
 
     var stopwatchID = setInterval(updateTimer, 1000);
 
     var stopWatchCount = 0;
-function updateTimer() {
-    stopWatchCount++;
-    document.getElementById('stopWatch').innerHTML = stopWatchCount;
-    return stopWatchCount;
-}
+
+    function updateTimer() {
+        stopWatchCount++;
+        document.getElementById('stopWatch').innerHTML = stopWatchCount;
+        return stopWatchCount;
+    }
 
     var stopWatch = {};
 
     stopWatch.intervalId = null;
 
 
-
-
-/*})();*/
+    /*})();*/
 </script>
 </body>
 </html>
